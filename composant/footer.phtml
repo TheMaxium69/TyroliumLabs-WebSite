@@ -4,12 +4,12 @@
             <div class="row">
                 <div class="col-lg-6 logo">
                     <img src="<?= $env_logo ?>" alt="Logo">
-                    <p class="fs-2 pt-2">Labs.Tyrolium</p>
+                    <p class="fs-2 pt-3">Labs.Tyrolium</p>
                 </div>
                 <div class="col-lg-6">
-                    <button type="button" class="btn btn-outline-primary btn-lg mx-4">Button</button>
-                    <button type="button" class="btn btn-outline-primary btn-lg m-4">Button</button>
-                    <button type="button" class="btn btn-outline-primary btn-lg mx-4">Button</button>
+                    <button type="button" class="btn btn-outline btn-lg mx-4">Button</button>
+                    <button type="button" class="btn btn-outline btn-lg m-4">Button</button>
+                    <button type="button" class="btn btn-outline btn-lg mx-4">Button</button>
                 </div>
             </div>
         </div>
@@ -33,5 +33,26 @@
             height: 50px;
             margin-right: 10px;
         }
+
+        .btn {
+            position: relative;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: blue;
+            transition: width 0.3s ease;
+        }
+
+        .btn:hover::after {
+            width: 100%;
+        }
+
     }
 </style>
