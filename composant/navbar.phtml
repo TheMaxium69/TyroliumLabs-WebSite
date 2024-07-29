@@ -3,16 +3,16 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="<?= $env_logo ?>" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <img src="<?= $env_logo ?>" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             
             <a href="index.php" class="name-logo">Labs.Tyrolium</a>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+        <div class="collapse navbar-collapse d-flex justify-content-end  d-none d-lg-flex" id="navbarNav">
             <ul class="navbar-nav mx-2">
-            <li><i class="ri-global-line"></i></li> 
+            <li><i class="ri-global-line mx-2"></i></li> 
             <li><i class="ri-discord-fill"></i></li> 
              <li>  
             </ul>
@@ -29,13 +29,17 @@
 
 .btn-contact{
     background-color: #0036DE;
+    border-radius: 20px;
+    padding: 10px;
     text-decoration: none;
     color:white;
+    box-shadow:3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .name-logo{
     text-decoration: none;
     color:black;
+    border-bottom: 2px solid #0036DE;
 }
 
  }
