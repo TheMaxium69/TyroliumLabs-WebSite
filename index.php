@@ -29,26 +29,26 @@
         border-bottom: solid 2px #0036DE;
     }
 
-    .intro{
+    main .intro{
         height:45px;
         width: 100%;
         border-bottom: solid 2px #0036DE;
     }
 
-    .intro-title{
+    main .intro-title{
         width: 50%;
         border-right: solid 2px #0036DE;
         height: 100%;
     }
 
-    .intro-title p{
+    main .intro-title p{
         padding-top: 5px;
         display: flex;
         margin: 0 0 0 25%;
         font-size: 22px;
     }
 
-    .intro-title i {
+    main .intro-title i {
         margin-left: 10px;
         font-size: 22px;
     }
