@@ -16,16 +16,5 @@
 
 
 
-<?php
-
-// salut
-
-var_dump("jer sui vachement beau");
-
-
-?>
-
-
-
 
 <?php require "@tyrositeframework/end.php"; ?>
