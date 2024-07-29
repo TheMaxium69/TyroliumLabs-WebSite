@@ -15,6 +15,9 @@
         </div>
     </div>
 
+    <p><?= $env_titre ?></p>
+
+
 
 
 </main>
