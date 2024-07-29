@@ -82,6 +82,11 @@
         font-size: 22px;
     }
 
+    main .card{
+        border: 0;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    }
+
     main .card-flex{
         display: flex;
         justify-content: space-around;
