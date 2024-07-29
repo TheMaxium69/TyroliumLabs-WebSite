@@ -18,32 +18,25 @@
     <div class="card-flex">
 
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="file_assets/card.png" class="card-img-top" alt="card">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Card title <i class="ri-heart-2-line"></i></h5>
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="file_assets/card.png" class="card-img-top" alt="card">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Card title <i class="ri-heart-2-line"></i></h5>
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="file_assets/card.png" class="card-img-top" alt="card">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">Card title <i class="ri-heart-2-line"></i></h5>
             </div>
         </div>
-
 
     </div>
 
@@ -92,6 +85,12 @@
         justify-content: space-around;
         max-width: 1080px;
         margin: 40px auto;
+    }
+
+    main .card-title{
+        display: flex;
+        justify-content: space-between;
+        color: black;
     }
 
 
