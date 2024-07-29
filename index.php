@@ -20,6 +20,9 @@
 
 // salut
 
+var_dump("jer sui vachement beau");
+
+
 ?>
 
 
