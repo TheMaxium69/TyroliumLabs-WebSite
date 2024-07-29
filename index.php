@@ -5,6 +5,8 @@
 
 <header> <?php $cp_navbar(); ?> </header>
 
+<?php $cp_hero(); ?>
+
 <main>
 
     <p><?= $env_titre ?></p>
@@ -14,7 +16,7 @@
 
 <?php $js_exemple(); ?>
 
-
+<?php $cp_footer(); ?>
 
 
 <?php require "@tyrositeframework/end.php"; ?>
