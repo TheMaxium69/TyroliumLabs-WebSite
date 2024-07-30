@@ -18,26 +18,44 @@ require "@tyrositeframework/start.php"; ?>
 
 
 <a href="http://localhost/TyroliumLabs-WebSite/labs_test.php?id=1">mon labs 1</a>
-<a href="http://localhost/TyroliumLabs-WebSite/labs_test.php?id=2">mon labs 2</a>
+<a href="http://localhost/TyroliumLabs-WebSite/labs_test.php">mon labs 2</a>
 <a href="http://localhost/TyroliumLabs-WebSite/labs_test.php?id=3">je suis super beau</a>
+<a href=".">le point</a>
 
 <?php
 
-$idLabsRequest = $_GET['id'];
+require $DATABASE;
 
-var_dump($idLabsRequest);
+if (isset($_GET['id'])) {
+    $idLabsRequest = $_GET['id'];
 
-$sql = "SELECT * FROM users WHERE id =id".$idLabsRequest;
+    var_dump($idLabsRequest);
 
-$stmt = $db->prepare($sql);
+    $sql = "SELECT * FROM labs WHERE id =:id";
+    var_dump($sql);
 
-$stmt->execute(['id' =>$idLabsRequest]);
+    $stmt = $db->prepare($sql);
+
+    $stmt->execute(['id' => $idLabsRequest]);
 
 
-$tabsSelected = $stmt->fetch(PDO::FETCH_ASSOC);
+    $tabsSelected = $stmt->fetch(PDO::FETCH_ASSOC);
 
-var_dump($tabsSelected);
 
+    if (!empty($tabsSelected)) {
+
+        var_dump($tabsSelected);
+        // TU RESTE ICI
+
+    } else {
+        // var_dump("ma parole la bdd , elle est grâve vide");
+        header('Location: .');
+    }
+} else {
+
+    // var_dump("je sait qu'il n'y a rien");
+    header('Location: .');
+}
 
 ?>
 
