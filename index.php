@@ -11,9 +11,8 @@ if (!empty($_GET['like']) && !empty($token) && $tokenNavigateur === $token) {
     $idLabs = $_GET['like'];
     var_dump($idLabs);
     $sql = 'INSERT INTO `likes`(`idLabs`, `tokenNavigateur`) VALUES (:idLabs, :tokenNavigateur)';
-    $stmt = $ConnectDB->prepare($sql);
-    $stmt->bind_param($idLabs, $token);
-    $stmt->execute();
+    $stmt = $db->prepare($sql);
+    $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $token]);
 }
 ?>
 
@@ -35,7 +34,7 @@ if (!empty($_GET['like']) && !empty($token) && $tokenNavigateur === $token) {
             <img src="file_assets/card.png" class="card-img-top" alt="card">
             <div class="card-body">
                 <h5 class="card-title">Card title <?php if (empty($idLabs)) { ?>
-                        <i onclick="windows.location.href='?like=1';" class="ri-heart-2-line"></i>
+                        <i onclick="window.location.href='?like=1';" class="ri-heart-2-line"></i>
                     <?php } else { ?>
                         <i class="ri-heart-2-fill"></i>
                     <?php } ?>
