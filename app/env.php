@@ -40,13 +40,13 @@ $env_page = array(
     0 => "404 | " . $env_name,
     //Page
     1 => array(
-        "title" => "Accueil | " . $env_name,
+        "title" => $env_name,
         "name" => "Accueil",
         "url" => "./",
         "css" => "index.css",
     ),
     2 => array(
-        "title" => "Labs | " . $env_name,
+        "title" => $env_name,
         "name" => "Labs",
         "url" => "./labs.php",
         "css" => "labs.css",
