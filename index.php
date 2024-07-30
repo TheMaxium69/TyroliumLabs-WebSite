@@ -1,7 +1,23 @@
-<?php $page_id = 1; require "@tyrositeframework/start.php"; ?>
+<?php $page_id = 1;
+require "@tyrositeframework/start.php"; ?>
 
+<?php
+require $DATABASE;
 
+$idLabs = $_POST['idLabs'];
+$token = 'slmhcjkgKLJGHJHBJNGH'; // ou $SESSION['token'] ou $_COOKIE['token'] ? 
 
+if (!empty($idLabs) && !empty($token)) {
+    $sql = 'SELECT idLabs FROM likes WHERE idLabs = ? ';
+
+    $sql = 'INSERT INTO `likes`(`idLabs`, `token`) VALUES (?, ?)';
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param($idLabs, $token);
+    $stmt->execute();
+} else {
+    echo 'error';
+}
+?>
 
 <header> <?php $cp_navbar(); ?> </header>
 
@@ -20,50 +36,49 @@
         <div class="card" style="width: 18rem;">
             <img src="file_assets/card.png" class="card-img-top" alt="card">
             <div class="card-body">
-                <h5 class="card-title">Card title <i class="ri-heart-2-line"></i></h5>
+                <h5 class="card-title">Card title <i class="ri-heart-2-line""></i></h5>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem;">
-            <img src="file_assets/card.png" class="card-img-top" alt="card">
-            <div class="card-body">
-                <h5 class="card-title">Card title <i class="ri-heart-2-line"></i></h5>
+        <div class=" card" style="width: 18rem;">
+                        <img src="file_assets/card.png" class="card-img-top" alt="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title <i class="ri-heart-2-fill"></i></h5>
+                        </div>
             </div>
-        </div>
 
-        <div class="card" style="width: 18rem;">
-            <img src="file_assets/card.png" class="card-img-top" alt="card">
-            <div class="card-body">
-                <h5 class="card-title">Card title <i class="ri-heart-2-line"></i></h5>
+            <div class="card" style="width: 18rem;">
+                <img src="file_assets/card.png" class="card-img-top" alt="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card title <i class="ri-heart-2-line"></i></h5>
+                </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
 
 
 </main>
 
 <style>
-
-    main{
+    main {
         border-top: solid 2px #0036DE;
         border-bottom: solid 2px #0036DE;
     }
 
-    main .intro{
-        height:45px;
+    main .intro {
+        height: 45px;
         width: 100%;
         border-bottom: solid 2px #0036DE;
     }
 
-    main .intro-title{
+    main .intro-title {
         width: 50%;
         border-right: solid 2px #0036DE;
         height: 100%;
     }
 
-    main .intro-title p{
+    main .intro-title p {
         padding-top: 5px;
         display: flex;
         margin: 0 0 0 25%;
@@ -75,27 +90,28 @@
         font-size: 22px;
     }
 
-    main .card{
+    main .card {
         border: 0;
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     }
 
-    main .card-flex{
+    main .card-flex {
         display: flex;
         justify-content: space-around;
         max-width: 1080px;
         margin: 40px auto;
     }
 
-    main .card-title{
+    main .card-title {
         display: flex;
         justify-content: space-between;
         color: black;
     }
 
-
+    main .card-title i:active {
+        color: #0036DE;
+    }
 </style>
-
 
 <?php $js_exemple(); ?>
 
