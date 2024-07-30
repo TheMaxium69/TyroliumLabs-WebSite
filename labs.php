@@ -14,7 +14,7 @@ require "@tyrositeframework/start.php"; ?>
             <div class="row align-items-center">
                 <div class="col-lg-12 mb-4 mb-lg-0 image">
                     <div class="titre">
-                        <img src="./file_assets/card.png" alt="*">
+                        <img src="./file_assets/card.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4 mb-lg-0 imageindex">
