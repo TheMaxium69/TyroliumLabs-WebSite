@@ -7,30 +7,13 @@ require $DATABASE;
 /******
   LABS
  ******/
-// if (isset($_GET['id'])) {
-//     $idLabsRequest = $_GET['id'];
-
-//     $sql = "SELECT * FROM labs";
-//     $stmt = $db->prepare($sql);
-
-//     $stmt->execute();
-
-//     $allLabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//     if (!empty($allLabs)) {
-//         var_dump($allLabs);
-//     } else {
-//         header('Location: .');
-//     }
-// } else {
-//     header('Location: .');
-
 $sql = "SELECT * FROM labs";
 $stmt = $db->prepare($sql);
 
 $stmt->execute();
 
 $allLabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//}
+
 
 /******
   LIKE
