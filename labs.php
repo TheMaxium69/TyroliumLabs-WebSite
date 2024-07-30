@@ -78,7 +78,7 @@ require "@tyrositeframework/start.php"; ?>
             <div class="row border-container">
                 <div class="col-lg-6 mb-4 mb-lg-0 fs-4">
                     <div class="mt-4 border-page d-flex justify-content-start align-items-center">
-                        <a href=""><span>Labs Précedente</span><i class="ri-arrow-left-circle-line mx-3 mt-3 icone"></i></a>
+                        <a href=""><i class="ri-arrow-left-circle-line mx-3 mt-3 icone"></i><span>Labs Précedente</span></a>
                     
                     </div>
                 </div>
