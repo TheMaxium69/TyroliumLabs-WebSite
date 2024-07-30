@@ -7,11 +7,10 @@
             
             <a href="index.php" class="name-logo">Labs.Tyrolium</a>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-flex justify-content-end  d-none d-lg-flex" id="navbarNav">
-            <ul class="navbar-nav mx-2">
+        <div class="collapse navbar-collapse d-flex justify-content-end d-lg-flex" id="navbarNav" style="display: flex !important;
+    flex-basis: auto;">
+            <ul class="navbar-nav mx-2" style="
+    flex-direction: row;">
                 <li onclick="window.location.href='https://tyrolium.fr';"><i class="ri-global-line mx-2"></i></li>
                 <li onclick="window.location.href='https://discord.gg/mtDx9ceS7n';"><i class="ri-discord-fill"></i></li>
             </ul>
@@ -40,6 +39,16 @@
     color:black;
     border-bottom: 2px solid #0036DE;
 }
+
+ }
+
+ @media (max-width: 439px) {
+
+     #navbar .navbar-nav{
+         display: none;
+     }
+
+
 
  }
 
