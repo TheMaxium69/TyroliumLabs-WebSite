@@ -19,7 +19,6 @@ $SYSTEM_CSS = "file_css/";
 
 // Data
 $DATABASE = "app/database." . $APP_ENV . ".php";
-$SALT = "app/salt." . $APP_ENV . ".php";
 
 
 /*************************
@@ -29,10 +28,10 @@ $SALT = "app/salt." . $APP_ENV . ".php";
  ************************/
 
 //Variable GLOBAL
-$env_name = "TyroExemple";
+$env_name = "TyroliumLabs";
 $env_logo = $SYSTEM_ASSETS . "logo.png";
-$env_url = "https://tyroexemple.fr"; /* for <meta> */
-$env_desc = "My First Site"; /* for <meta> */
+$env_url = "https://labs.tyrolium.fr"; /* for <meta> */
+$env_desc = "Tyrolium Labs est un site qui présente les projets technologie informatique de Tyrolium"; /* for <meta> */
 $env_lang = "fr"; /* for <html lang=""> */
 
 // PAGE MANAGEMENT
@@ -47,10 +46,10 @@ $env_page = array(
         "css" => "index.css",
     ),
     2 => array(
-        "title" => "Exemple | " . $env_name,
-        "name" => "Exemple",
-        "url" => "./exemple.php",
-        "css" => "exemple.css",
+        "title" => "Labs | " . $env_name,
+        "name" => "Labs",
+        "url" => "./labs.php",
+        "css" => "labs.css",
     ),
     /*...*/
 );
