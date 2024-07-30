@@ -7,6 +7,22 @@ require $DATABASE;
 /******
   LABS
  ******/
+// if (isset($_GET['id'])) {
+//     $idLabsRequest = $_GET['id'];
+
+//     $sql = "SELECT * FROM labs";
+//     $stmt = $db->prepare($sql);
+
+//     $stmt->execute();
+
+//     $allLabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//     if (!empty($allLabs)) {
+//         var_dump($allLabs);
+//     } else {
+//         header('Location: .');
+//     }
+// } else {
+//     header('Location: .');
 
 $sql = "SELECT * FROM labs";
 $stmt = $db->prepare($sql);
@@ -14,6 +30,7 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 
 $allLabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//}
 
 /******
   LIKE
@@ -52,14 +69,16 @@ if (!empty($_GET['like']) && !empty($token) && $tokenNavigateur === $token) {
         ?>
             <div class="card" style="width: 18rem;">
                 <img src="file_assets/<?= $lab['background'] ?>" class="card-img-top" alt="card">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $lab['name'] ?> <?php if (empty($idLabs)) { ?>
-                            <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line"></i>
-                        <?php } else { ?>
-                            <i class="ri-heart-2-fill"></i>
-                        <?php } ?>
-                    </h5>
-                </div>
+                <a href="labs.php?id=<?= $lab['id']; ?>">
+                    <div class=" card-body">
+                        <h5 class="card-title"><?= $lab['name'] ?> <?php if (empty($idLabs)) { ?>
+                                <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line"></i>
+                            <?php } else { ?>
+                                <i class="ri-heart-2-fill"></i>
+                            <?php } ?>
+                        </h5>
+                    </div>
+                </a>
             </div>
         <?php } ?>
     </div>
