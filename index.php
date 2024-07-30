@@ -4,15 +4,14 @@ require "@tyrositeframework/start.php"; ?>
 <?php
 require $DATABASE;
 
-$token = 'slmhcjkgKLJGHJHBJNGH'; // ou $SESSION['token'] ou $_COOKIE['token'] ? 
+$token = 'slmhcjkgKLJGHJHBJNGH';
+$tokenNavigateur = $token;
 
-if (!empty($idLabs) && !empty($token)) {
-    $sql = 'SELECT idLabs FROM likes WHERE idLabs = ? ';
-
-    $idLabs = $_POST['idLabs'];
-
-    $sql = 'INSERT INTO `likes`(`idLabs`, `token`) VALUES (?, ?)';
-    $stmt = $conn->prepare($sql);
+if (!empty($_GET['like']) && !empty($token) && $tokenNavigateur === $token) {
+    $idLabs = $_GET['like'];
+    var_dump($idLabs);
+    $sql = 'INSERT INTO `likes`(`idLabs`, `tokenNavigateur`) VALUES (:idLabs, :tokenNavigateur)';
+    $stmt = $ConnectDB->prepare($sql);
     $stmt->bind_param($idLabs, $token);
     $stmt->execute();
 }
@@ -35,27 +34,32 @@ if (!empty($idLabs) && !empty($token)) {
         <div class="card" style="width: 18rem;">
             <img src="file_assets/card.png" class="card-img-top" alt="card">
             <div class="card-body">
-                <h5 class="card-title">Card title <i class="ri-heart-2-line""></i></h5>
+                <h5 class="card-title">Card title <?php if (empty($idLabs)) { ?>
+                        <i onclick="windows.location.href='?like=1';" class="ri-heart-2-line"></i>
+                    <?php } else { ?>
+                        <i class="ri-heart-2-fill"></i>
+                    <?php } ?>
+                </h5>
             </div>
         </div>
 
         <div class=" card" style="width: 18rem;">
-                        <img src="file_assets/card.png" class="card-img-top" alt="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title <i class="ri-heart-2-fill"></i></h5>
-                        </div>
+            <img src="file_assets/card.png" class="card-img-top" alt="card">
+            <div class="card-body">
+                <h5 class="card-title">Card title <i class="ri-heart-2-line"><a href="http://localhost/TyroliumLabs-Website/index.php?like=2"></a></i></h5>
             </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="file_assets/card.png" class="card-img-top" alt="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title <i class="ri-heart-2-line"></i></h5>
-                </div>
-            </div>
-
         </div>
 
+        <div class="card" style="width: 18rem;">
+            <img src="file_assets/card.png" class="card-img-top" alt="card">
+            <div class="card-body">
+                <h5 class="card-title">Card title <i class="ri-heart-2-line"><a href="http://localhost/TyroliumLabs-Website/index.php?like=3"></a></i></h5>
+            </div>
+        </div>
 
+    </div>
+
+    <!-- ri-heart-2-fill -->
 
 </main>
 
@@ -107,7 +111,7 @@ if (!empty($idLabs) && !empty($token)) {
         color: black;
     }
 
-    main .card-title i:active {
+    main .card-title i:hover {
         color: #0036DE;
     }
 </style>
