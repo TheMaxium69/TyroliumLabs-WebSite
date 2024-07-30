@@ -36,7 +36,7 @@ require "@tyrositeframework/start.php"; ?>
                     </div>
                 </div>
                 <div class="col-lg-12 mb-4 mb-lg-0 mt-4">
-                    <div class="mt-4 border text-center">
+                    <div class="border text-center">
                         <h2>Description</h2>
                     </div>
                 </div>
@@ -78,14 +78,14 @@ require "@tyrositeframework/start.php"; ?>
             <div class="row border-container">
                 <div class="col-lg-6 mb-4 mb-lg-0 fs-4">
                     <div class="mt-4 border-page d-flex justify-content-start align-items-center">
-                        <a href=""><i class="ri-arrow-left-circle-line mx-3 mt-3 icone"></i></a>
-                        <p class="margin-page">Labs Précedente</p>
+                        <a href=""><span>Labs Précedente</span><i class="ri-arrow-left-circle-line mx-3 mt-3 icone"></i></a>
+                    
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4 mb-lg-0 fs-4">
                     <div class="mt-4 border-page d-flex justify-content-end align-items-center">
-                        <p class="margin-page">Labs Suivante</p>
-                        <a href=""><i class="ri-arrow-right-circle-line  mx-3 mt-3 icone"></i></a>
+                        <p class="margin-page"></p>
+                        <a href="">Labs Suivante<span><i class="ri-arrow-right-circle-line mx-3 mt-3 icone"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -110,8 +110,8 @@ require "@tyrositeframework/start.php"; ?>
             top: -200px;
         }
         .titre {
-            border-bottom: solid 20px #0036DE;
-            font-size: 20px;
+            border-bottom: solid 10px #0036DE;
+            font-size: 30px;
             text-align: center;
 
         }
@@ -119,7 +119,7 @@ require "@tyrositeframework/start.php"; ?>
 
     #labs2 {
         .border-titre {
-            border-top: solid 10px #0036DE;
+            border-top: solid 5px #0036DE;
         }
         .titre2 {
             width: 50%;
@@ -137,18 +137,14 @@ require "@tyrositeframework/start.php"; ?>
             margin-left: -1rem;
             margin-right: -1rem;
         }
-        .margin-page{
-            margin-top: 15px;
-        }
+        
 
-        .icone{
+        a{
             text-decoration: none;
-            color: black;
+            color:black;
         }
 
-        .border-page a::before {
-            display: none;
-        }
+       
 
     }
 </style>
@@ -175,7 +171,7 @@ require "@tyrositeframework/start.php"; ?>
             width:100%;
             height:400px;
         }
-        
+
         }
 
     </style>
