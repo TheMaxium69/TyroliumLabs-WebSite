@@ -29,10 +29,10 @@ require $DATABASE;
 if (isset($_GET['id'])) {
     $idLabsRequest = $_GET['id'];
 
-    var_dump($idLabsRequest);
+    // var_dump($idLabsRequest);
 
     $sql = "SELECT * FROM labs WHERE id =:id";
-    var_dump($sql);
+    // var_dump($sql);
 
     $stmt = $db->prepare($sql);
 
@@ -56,6 +56,8 @@ if (isset($_GET['id'])) {
     // var_dump("je sait qu'il n'y a rien");
     header('Location: .');
 }
+
+phpinfo();
 
 ?>
 
