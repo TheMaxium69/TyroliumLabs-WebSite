@@ -4,18 +4,17 @@ require "@tyrositeframework/start.php"; ?>
 <?php
 require $DATABASE;
 
-$idLabs = $_POST['idLabs'];
 $token = 'slmhcjkgKLJGHJHBJNGH'; // ou $SESSION['token'] ou $_COOKIE['token'] ? 
 
 if (!empty($idLabs) && !empty($token)) {
     $sql = 'SELECT idLabs FROM likes WHERE idLabs = ? ';
 
+    $idLabs = $_POST['idLabs'];
+
     $sql = 'INSERT INTO `likes`(`idLabs`, `token`) VALUES (?, ?)';
     $stmt = $conn->prepare($sql);
     $stmt->bind_param($idLabs, $token);
     $stmt->execute();
-} else {
-    echo 'error';
 }
 ?>
 
