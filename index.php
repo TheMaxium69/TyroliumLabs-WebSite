@@ -4,16 +4,35 @@ require "@tyrositeframework/start.php"; ?>
 <?php
 require $DATABASE;
 
+/******
+  LABS
+ ******/
+
+$sql = "SELECT * FROM labs";
+$stmt = $db->prepare($sql);
+
+$stmt->execute();
+
+$allLabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+/******
+  LIKE
+ ******/
+
 $token = 'slmhcjkgKLJGHJHBJNGH';
 $tokenNavigateur = $token;
 
+// RECUPERE OU CREER UN TOKEN EN COOKIE
+
 if (!empty($_GET['like']) && !empty($token) && $tokenNavigateur === $token) {
     $idLabs = $_GET['like'];
-    var_dump($idLabs);
+    //var_dump($idLabs);
     $sql = 'INSERT INTO `likes`(`idLabs`, `tokenNavigateur`) VALUES (:idLabs, :tokenNavigateur)';
     $stmt = $db->prepare($sql);
     $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $token]);
 }
+
+
 ?>
 
 <header> <?php $cp_navbar(); ?> </header>
@@ -29,37 +48,21 @@ if (!empty($_GET['like']) && !empty($token) && $tokenNavigateur === $token) {
     </div>
 
     <div class="card-flex">
-
-        <div class="card" style="width: 18rem;">
-            <img src="file_assets/card.png" class="card-img-top" alt="card">
-            <div class="card-body">
-                <h5 class="card-title">Card title <?php if (empty($idLabs)) { ?>
-                        <i onclick="window.location.href='?like=1';" class="ri-heart-2-line"></i>
-                    <?php } else { ?>
-                        <i class="ri-heart-2-fill"></i>
-                    <?php } ?>
-                </h5>
+        <?php foreach ($allLabs as $lab) {
+        ?>
+            <div class="card" style="width: 18rem;">
+                <img src="file_assets/<?= $lab['background'] ?>" class="card-img-top" alt="card">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $lab['name'] ?> <?php if (empty($idLabs)) { ?>
+                            <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line"></i>
+                        <?php } else { ?>
+                            <i class="ri-heart-2-fill"></i>
+                        <?php } ?>
+                    </h5>
+                </div>
             </div>
-        </div>
-
-        <div class=" card" style="width: 18rem;">
-            <img src="file_assets/card.png" class="card-img-top" alt="card">
-            <div class="card-body">
-                <h5 class="card-title">Card title <i class="ri-heart-2-line"><a href="http://localhost/TyroliumLabs-Website/index.php?like=2"></a></i></h5>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="file_assets/card.png" class="card-img-top" alt="card">
-            <div class="card-body">
-                <h5 class="card-title">Card title <i class="ri-heart-2-line"><a href="http://localhost/TyroliumLabs-Website/index.php?like=3"></a></i></h5>
-            </div>
-        </div>
-
+        <?php } ?>
     </div>
-
-    <!-- ri-heart-2-fill -->
-
 </main>
 
 <style>
