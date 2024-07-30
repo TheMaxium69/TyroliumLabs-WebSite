@@ -51,6 +51,12 @@ $env_page = array(
         "url" => "./labs.php",
         "css" => "labs.css",
     ),
+    3 => array(
+        "title" => "Labs | " . $env_name,
+        "name" => "Labs",
+        "url" => "./labs_test.php",
+        "css" => "labs.css",
+    ),
     /*...*/
 );
 
