@@ -51,20 +51,20 @@ if (!empty($_GET['like']) && !empty($token) && $tokenNavigateur === $token) {
         <?php foreach ($allLabs as $lab) {
         ?>
             <div class="card" style="width: 18rem;">
-                <img src="file_assets/<?= $lab['background'] ?>" class="card-img-top" alt="card">
                 <a href="labs.php?id=<?= $lab['id']; ?>">
+                    <img src="file_assets/<?= $lab['background'] ?>" class="card-img-top" alt="card">
                     <div class=" card-body">
                         <h5 class="card-title"><?= $lab['name'] ?> <?php if (empty($idLabs)) { ?>
-                                <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line"></i>
-                            <?php } else { ?>
-                                <i class="ri-heart-2-fill"></i>
-                            <?php } ?>
-                        </h5>
-                    </div>
                 </a>
+                <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line"></i>
+            <?php } else { ?>
+                <i class="ri-heart-2-fill"></i>
+            <?php } ?>
+            </h5>
             </div>
-        <?php } ?>
     </div>
+<?php } ?>
+</div>
 </main>
 
 <style>
@@ -117,6 +117,11 @@ if (!empty($_GET['like']) && !empty($token) && $tokenNavigateur === $token) {
 
     main .card-title i:hover {
         color: #0036DE;
+    }
+
+    main a {
+        text-decoration: none;
+        color: black;
     }
 </style>
 
