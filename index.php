@@ -90,12 +90,13 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
                     <img src="file_assets/<?= $lab['background'] ?>" class="card-img-top" alt="card">
                 </a>
                 <div class="card-body">
+                    <img src="file_assets/logo.png" class="center-icon" alt="center-icon">
                     <h5 class="card-title">
                         <?= $lab['name'] ?>
                         <?php if (!in_array($lab['id'], $likedLabs)) { ?>
-                            <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line"></i>
+                            <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line fs-4"></i>
                         <?php } else { ?>
-                            <i onclick="window.location.href='?dislike=<?= $lab['id']; ?>';" class="ri-heart-2-fill" style="color: #0036DE;"></i>
+                            <i onclick="window.location.href='?dislike=<?= $lab['id']; ?>';" class="ri-heart-2-fill fs-4" style="color: #0036DE;"></i>
                         <?php } ?>
                     </h5>
                 </div>
@@ -140,8 +141,23 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     }
 
-    main .card img {
+    main .card-img-top {
         filter: blur(1px);
+    }
+
+    main .center-icon {
+        height: 100px;
+        width: 100px;
+    }
+
+    main .card-body .center-icon {
+        position: absolute;
+        top: 66px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border-radius: 20%;
+        padding: 30px;
     }
 
 
@@ -158,6 +174,8 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
         display: flex;
         justify-content: space-between;
         color: black;
+        border-top: 1px solid black;
+        padding-top: 5px;
     }
 
     main .card-title i:hover {
