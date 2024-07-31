@@ -29,23 +29,36 @@ require $DATABASE;
 if (isset($_GET['id'])) {
     $idLabsRequest = $_GET['id'];
 
-    // var_dump($idLabsRequest);
-
     $sql = "SELECT * FROM labs WHERE id =:id";
-    // var_dump($sql);
-
     $stmt = $db->prepare($sql);
-
     $stmt->execute(['id' => $idLabsRequest]);
-
-
     $tabsSelected = $stmt->fetch(PDO::FETCH_ASSOC);
-
 
     if (!empty($tabsSelected)) {
 
         var_dump($tabsSelected);
-        // TU RESTE ICI
+
+    $sqlProjects = "SELECT * FROM projectlab WHERE idlabs =:id";
+    $stmtProjects = $db->prepare($sqlProjects);
+    $stmtProjects->execute(['id' => $idLabsRequest]);
+    $projects = $stmtProjects->fetchAll(PDO::FETCH_ASSOC);
+
+    if (!empty($projects)){
+
+    var_dump($projects);
+
+    }else {
+        echo "pas de projet trouvé";
+    }
+  
+    $sql = 'SELECT COUNT(*) FROM likes WHERE idLabs = :id';
+    $stmt = $db->prepare($sql);
+    $stmt->execute(['id' => $idLabsRequest]);
+    $totalLikes = $stmt->fetch(PDO::FETCH_ASSOC);
+
+   
+
+    echo 'Nombre de likes : ' . $totalLikes['COUNT(*)'];
 
     } else {
         // var_dump("ma parole la bdd , elle est grâve vide");
@@ -56,6 +69,8 @@ if (isset($_GET['id'])) {
     // var_dump("je sait qu'il n'y a rien");
     header('Location: .');
 }
+
+    
 
 ?>
 
