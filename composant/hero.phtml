@@ -4,9 +4,10 @@
       <div class="title">
         <i class="ri-flask-line "></i>
         <h1 class="titlehero pb-3 fs-2">Labs.Tyrolium</h1>
+        <p class="line mb-3"></p>
       </div>
       <div class=" text-center">
-        <p class=" px-5 my-5">
+        <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione error beatae autem itaque harum sit maxime quasi at quibusdam sed hic officia laudantium iure fugit, quam non amet accusamus est.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione error beatae autem itaque harum sit maxime quasi at quibusdam sed hic officia laudantium iure fugit, quam non amet accusamus est.Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
       </div>
@@ -17,9 +18,9 @@
 <style>
   #hero {
 
-      .titlehero{
-          font-family: "Share Tech Mono", monospace;
-      }
+    .titlehero {
+      font-family: "Share Tech Mono", monospace;
+    }
 
     .bg {
       height: 450px;
@@ -31,14 +32,17 @@
     .intro {
       border-radius: 0px 0px 20px 20px;
       background-color: #fbfbfb;
-      height: 410px;
-      width: 900px;
+      height: 90%;
+      max-width: 72%;
     }
 
     .title {
       text-align: center;
+    }
+
+    .line {
       border-bottom: 4px solid #0036DE;
-      margin: 0px 200px 0px 200px;
+      margin: 0 20% 0 20%;
     }
 
     i {
@@ -50,5 +54,22 @@
         max-width: 80%;
       }
     }
+
+    @media (max-width: 480px) {
+      .intro {
+        height: 90%;
+        width: 80%;
+        margin-bottom: 50px;
+      }
+
+      .title h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
   }
 </style>
