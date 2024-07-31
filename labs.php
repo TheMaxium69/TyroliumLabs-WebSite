@@ -49,12 +49,12 @@ require "@tyrositeframework/start.php"; ?>
                 <div class="col-lg-6 mb-4 mb-lg-0 image">
                     <div class="mt-4 titre">
                         <div class="container">
-                            <div class="version-info fs-4">
-                                <p>Version : 2.0</p>
+                            <div class="version-info fs-5 bg-body-secondary w-50">
+                                <p>Version :  2.0</p>
                                 <p>Contributeur : Maxime Tournier</p>
                                 <p>Commit : 435</p>
                                 <p>Like : 8000</p>
-                                <p>Repos : TheMaxium69/TyroSiteFrameWork</p>
+                                <p>Repos :</p> <p class="text">TheMaxium69/TyroSiteFrameWork</p>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@ require "@tyrositeframework/start.php"; ?>
     #labs {
         .image img {
             width: 100%;
-            height: auto;
+            height: 500px;
         }
 
 
@@ -110,11 +110,12 @@ require "@tyrositeframework/start.php"; ?>
             top: -200px;
         }
         .titre {
-            border-bottom: solid 10px #0036DE;
+            border-bottom: solid 5px #0036DE;
             font-size: 30px;
             text-align: center;
 
         }
+       
     }
 
     #labs2 {
@@ -133,7 +134,7 @@ require "@tyrositeframework/start.php"; ?>
             width: 20%;
         }
         .border-page {
-            border: solid 15px #0036DE;
+            border: solid 5px #0036DE;
             margin-left: -1rem;
             margin-right: -1rem;
         }
