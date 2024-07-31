@@ -16,53 +16,57 @@ $stmt->execute();
 $allLabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 /******
-  LIKE
+  TOKEN
  ******/
 
-//GENERER UNE CHAINE ALEATOIRE: 
-// $length = 20;
-// $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-// $string = '';
-// for ($i = 0; $i < $length; $i++) {
-//     $string .= $chars[rand(0, strlen($chars) - 1)];
-// }
-// $string;
-// var_dump($string);
+if (!empty($_COOKIE['tokenUser'])){
 
+    $tokenNavigateur = $_COOKIE['tokenUser'];
 
-// RECUPERE OU CREER UN TOKEN EN COOKIE // GENERER UNE CHAINE ALEATOIRE HELPPPPPPPPPPPP x) ???? 
-$token = 'slmhcjkgKLJGHJHBJNGH';
-setcookie(
-    'tokenUser',
-    $token,
-);
-$tokenNavigateur = $_COOKIE['tokenUser'];
+} else {
 
-if (!empty($_GET['like']) && !empty($token) && $tokenNavigateur === $token) {
-    $idLabs = $_GET['like'];
-    //var_dump($idLabs);
-    $sql = 'INSERT INTO `likes`(`idLabs`, `tokenNavigateur`) VALUES (:idLabs, :tokenNavigateur)';
-    $stmt = $db->prepare($sql);
-    $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $token]);
-    header('Location: .');
+    $token = md5(uniqid() . uniqid());
+    setcookie(
+        'tokenUser',
+        $token
+    );
+    $tokenNavigateur = $_COOKIE['tokenUser'];
+
 }
 
+/******
+GET LIKE
+ ******/
 $sql = 'SELECT idLabs FROM likes WHERE tokenNavigateur = :tokenNavigateur';
 $stmt = $db->prepare($sql);
 $stmt->execute(['tokenNavigateur' => $tokenNavigateur]);
 $likedLabs = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+
+/******
+  LIKE
+ ******/
+
+if (!empty($_GET['like']) && !empty($tokenNavigateur)) {
+    $idLabs = $_GET['like'];
+    //var_dump($idLabs);
+    $sql = 'INSERT INTO `likes`(`idLabs`, `tokenNavigateur`) VALUES (:idLabs, :tokenNavigateur)';
+    $stmt = $db->prepare($sql);
+    $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $tokenNavigateur]);
+    header('Location: .');
+}
 
 /******
   DISLIKE
  ******/
 
 // Si idLabs est présent dans la table likes ET que le token correspondant est le même que celui de "l'utilisateur" PB dans le code le coeur ne change pas sans refresh de la page pour le dislike
-//J'ai rajouté le header Location pour que la page se recharge bonne ou mauvaise idée ? 
-if (!empty($_GET['dislike']) && !empty($token) && $tokenNavigateur === $token) {
+//J'ai rajouté le header Location pour que la page se recharge bonne ou mauvaise idée ? BONNE IDEE ! like fort
+if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
     $idLabs = $_GET['dislike'];
     $sql = 'DELETE FROM `likes` WHERE idLabs = :idLabs AND tokenNavigateur = :tokenNavigateur';
     $stmt = $db->prepare($sql);
-    $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $token]);
+    $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $tokenNavigateur]);
     header('Location: .');
 }
 
