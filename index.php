@@ -19,10 +19,9 @@ $allLabs = $stmt->fetchAll(PDO::FETCH_ASSOC);
   TOKEN
  ******/
 
-if (!empty($_COOKIE['tokenUser'])){
+if (!empty($_COOKIE['tokenUser'])) {
 
     $tokenNavigateur = $_COOKIE['tokenUser'];
-
 } else {
 
     $token = md5(uniqid() . uniqid());
@@ -31,7 +30,6 @@ if (!empty($_COOKIE['tokenUser'])){
         $token
     );
     $tokenNavigateur = $_COOKIE['tokenUser'];
-
 }
 
 /******
@@ -141,6 +139,11 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
         border: 0;
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     }
+
+    main .card img {
+        filter: blur(1px);
+    }
+
 
     main .card-flex {
         display: flex;
