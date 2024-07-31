@@ -10,12 +10,10 @@ require "@tyrositeframework/start.php"; ?>
 
 
     <section id="labs">
-        <div class="container-fluid">
+        <div>
             <div class="row align-items-center">
                 <div class="col-lg-12 mb-4 mb-lg-0 image">
-                    <div class="titre">
-                        <img src="./file_assets/card.png" alt="">
-                    </div>
+                    <div class="titre background" style="background-image: url(file_assets/card.png)"></div>
                 </div>
                 <div class="col-lg-4 mb-4 mb-lg-0 imageindex">
                     <div class="mt-4">
@@ -44,7 +42,7 @@ require "@tyrositeframework/start.php"; ?>
         </div>
     </section>
     <section id="labs2">
-        <div class="container-fluid">
+        <div>
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0 image">
                     <div class="mt-4 titre">
@@ -75,15 +73,15 @@ require "@tyrositeframework/start.php"; ?>
                     </div>
                 </div>
             </div>
-            <div class="row border-container">
-                <div class="col-lg-6 mb-4 mb-lg-0 fs-4">
-                    <div class="mt-4 border-page d-flex justify-content-start align-items-center">
+            <div class="border-container" style="display: flex; width: 100%">
+                <div style="width: 50%">
+                    <div class="border-page d-flex justify-content-start align-items-center">
                         <a href=""><i class="ri-arrow-left-circle-line mx-3 mt-3 icone"></i><span>Labs Précedente</span></a>
                     
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4 mb-lg-0 fs-4">
-                    <div class="mt-4 border-page d-flex justify-content-end align-items-center">
+                <div style="width: 50%">
+                    <div class="border-page d-flex justify-content-end align-items-center">
                         <p class="margin-page"></p>
                         <a href="">Labs Suivante<span><i class="ri-arrow-right-circle-line mx-3 mt-3 icone"></i></span></a>
                     </div>
@@ -115,6 +113,13 @@ require "@tyrositeframework/start.php"; ?>
             text-align: center;
 
         }
+        .background{
+            width: 100%;
+            height: 500px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
        
     }
 
@@ -135,8 +140,8 @@ require "@tyrositeframework/start.php"; ?>
         }
         .border-page {
             border: solid 5px #0036DE;
-            margin-left: -1rem;
-            margin-right: -1rem;
+            /*margin-left: -1rem;*/
+            /*margin-right: -1rem;*/
         }
         
 
