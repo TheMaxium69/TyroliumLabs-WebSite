@@ -88,22 +88,22 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
             <div id="labs<?= $lab['id'] ?>" class="card" style="width: 18rem;">
                 <a href="labs.php?id=<?= $lab['id']; ?>">
                     <img src="file_assets/<?= $lab['background'] ?>" class="card-img-top" alt="card">
+                    <div class="card-body">
+                        <img src="file_assets/logo.png" class="center-icon" alt="center-icon">
+                        <h5 class="card-title">
+                            <?= $lab['name'] ?>
                 </a>
-                <div class="card-body">
-                    <img src="file_assets/logo.png" class="center-icon" alt="center-icon">
-                    <h5 class="card-title">
-                        <?= $lab['name'] ?>
-                        <?php if (!in_array($lab['id'], $likedLabs)) { ?>
-                            <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line fs-4"></i>
-                        <?php } else { ?>
-                            <i onclick="window.location.href='?dislike=<?= $lab['id']; ?>';" class="ri-heart-2-fill fs-4" style="color: #0036DE;"></i>
-                        <?php } ?>
-                    </h5>
-                </div>
+                <?php if (!in_array($lab['id'], $likedLabs)) { ?>
+                    <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line fs-4"></i>
+                <?php } else { ?>
+                    <i onclick="window.location.href='?dislike=<?= $lab['id']; ?>';" class="ri-heart-2-fill fs-4" style="color: #0036DE;"></i>
+                <?php } ?>
+                </h5>
             </div>
-        <?php } ?>
-
     </div>
+<?php } ?>
+
+</div>
 </main>
 
 <style>
