@@ -53,7 +53,7 @@ if (!empty($_GET['like']) && !empty($tokenNavigateur)) {
     $sql = 'INSERT INTO `likes`(`idLabs`, `tokenNavigateur`) VALUES (:idLabs, :tokenNavigateur)';
     $stmt = $db->prepare($sql);
     $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $tokenNavigateur]);
-    header('Location: .');
+    header('Location: .#labs' . $idLabs);
 }
 
 /******
@@ -67,7 +67,7 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
     $sql = 'DELETE FROM `likes` WHERE idLabs = :idLabs AND tokenNavigateur = :tokenNavigateur';
     $stmt = $db->prepare($sql);
     $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $tokenNavigateur]);
-    header('Location: .');
+    header('Location: .#labs' . $idLabs);
 }
 
 ?>
@@ -85,26 +85,25 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
     </div>
 
     <div class="card-flex">
-        <div class="row">
-            <?php foreach ($allLabs as $lab) { ?>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card" style="width: 18rem;">
-                        <a href="labs.php?id=<?= $lab['id']; ?>">
-                            <img src="file_assets/<?= $lab['background'] ?>" class="card-img-top" alt="card">
-                            <div class="card-body">
-                        </a>
-                        <h5 class="card-title"><?= $lab['name'] ?>
-                            <?php if (!in_array($lab['id'], $likedLabs)) { ?>
-                                <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line"></i>
-                            <?php } else { ?>
-                                <i onclick="window.location.href='?dislike=<?= $lab['id']; ?>';" class="ri-heart-2-fill" style="color: #0036DE;"></i>
-                            <?php } ?>
-                        </h5>
-                    </div>
+
+        <?php foreach ($allLabs as $lab) { ?>
+            <div id="labs<?= $lab['id'] ?>" class="card" style="width: 18rem;">
+                <a href="labs.php?id=<?= $lab['id']; ?>">
+                    <img src="file_assets/<?= $lab['background'] ?>" class="card-img-top" alt="card">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <?= $lab['name'] ?>
+                        <?php if (!in_array($lab['id'], $likedLabs)) { ?>
+                            <i onclick="window.location.href='?like=<?= $lab['id']; ?>';" class="ri-heart-2-line"></i>
+                        <?php } else { ?>
+                            <i onclick="window.location.href='?dislike=<?= $lab['id']; ?>';" class="ri-heart-2-fill" style="color: #0036DE;"></i>
+                        <?php } ?>
+                    </h5>
                 </div>
-        </div>
-    <?php } ?>
-    </div>
+            </div>
+        <?php } ?>
+
     </div>
 </main>
 
@@ -148,6 +147,8 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
         justify-content: space-around;
         max-width: 1080px;
         margin: 40px auto;
+        flex-wrap: wrap;
+        gap: 38px;
     }
 
     main .card-title {
