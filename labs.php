@@ -11,16 +11,12 @@ require "@tyrositeframework/start.php"; ?>
 
     <section id="labs">
         <div>
-            <div class="row align-items-center">
-                <div class="col-lg-12 mb-4 mb-lg-0 image">
-                    <div class="titre background" style="background-image: url(file_assets/card.png)"></div>
+            <div class="row">
+                <div class="col-lg-12 mb-4 mb-lg-0">
+                    <div class="background" style="background-image: url(file_assets/card.png)"></div>
                 </div>
-                <div class="col-lg-4 mb-4 mb-lg-0 imageindex">
-                    <div class="mt-4">
-                        <div>
-                            <img src="./file_assets/logo.png" class="card-img-top" alt="...">
-                        </div>
-                    </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="logo-bg" style="background-image: url(file_assets/logo.png)"></div>   
                 </div>
 
                 <div class="col-lg-6 mb-4 mb-lg-0">
@@ -29,7 +25,7 @@ require "@tyrositeframework/start.php"; ?>
                     </div>
                 </div>
                 <div class="col-lg-2 mb-4 mb-lg-0 mt-4">
-                    <div class="mt-4 border">
+                    <div class="mt-4 border d-flex justify-content-center">
                         <p>like</p>
                     </div>
                 </div>
@@ -43,8 +39,8 @@ require "@tyrositeframework/start.php"; ?>
     </section>
     <section id="labs2">
         <div>
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0 image">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0 ">
                     <div class="mt-4 titre">
                         <div class="container">
                             <div class="version-info fs-5 bg-body-secondary w-50">
@@ -93,19 +89,15 @@ require "@tyrositeframework/start.php"; ?>
 
 <style>
     #labs {
-        .image img {
-            width: 100%;
-            height: 500px;
-        }
-
-
-        .image {
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        .imageindex img {
-            position: relative;
-            top: -200px;
+        
+        .logo-bg{
+           position:relative;
+           top:-200px; 
+           height:500px;
+           width:600px;
+           background-size: contain;
+           background-position: center;
+           background-repeat: no-repeat; 
         }
         .titre {
             border-bottom: solid 5px #0036DE;
@@ -140,18 +132,13 @@ require "@tyrositeframework/start.php"; ?>
         }
         .border-page {
             border: solid 5px #0036DE;
-            /*margin-left: -1rem;*/
-            /*margin-right: -1rem;*/
         }
         
 
         a{
             text-decoration: none;
             color:black;
-        }
-
-       
-
+        }  
     }
 </style>
 </main>
