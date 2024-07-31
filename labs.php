@@ -157,28 +157,4 @@ require "@tyrositeframework/start.php"; ?>
 </main>
 
 <?php $cp_footer(); ?>
-
-    <section id="labs3">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 mb-lg-0 background">
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <style>
-        #labs3{
-
-            .background{
-            background: #0036DE;
-            width:100%;
-            height:400px;
-        }
-
-        }
-
-    </style>
-><?php require "@tyrositeframework/end.php"; ?>
+<?php require "@tyrositeframework/end.php"; ?>
