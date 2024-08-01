@@ -77,7 +77,7 @@ if (isset($_GET['id'])) {
                 </div>
     </section>
 
-    <section id="labs2">
+    <section id="labs2" class="margin">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-ms-4 col-12 ms-5 "> 
@@ -167,6 +167,7 @@ if (isset($_GET['id'])) {
 
         #labs2 {
 
+            margin-top: 100px;
             .content-version{
                 background-color: #E9ECEF;
             }
