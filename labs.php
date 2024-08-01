@@ -48,12 +48,12 @@ if (isset($_GET['id'])) {
 
 <main>
     <section id="labs">
-        <div class="background mb-3" style="background-image: url(file_assets/card.png)"></div>
+        <div class="background mb-3" style="background-image: url(file_assets/<?= $tabsSelected['background'] ?>)"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4  ">
                         <div class="logo rounded bg bg-white p-3 ">
-                        <div class="logo-bg " style="background-image: url(file_assets/logo.png)"></div>
+                        <div class="logo-bg " style="background-image: url(file_assets/<?= $tabsSelected['icone'] ?>)"></div>
                         </div>
                     </div>
 
