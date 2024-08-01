@@ -75,6 +75,7 @@ if (isset($_GET['id'])) {
                         </div>
                     </div>
                 </div>
+            </div>
     </section>
 
     <section id="labs2" class="margin">
@@ -101,10 +102,10 @@ if (isset($_GET['id'])) {
                     <?php foreach ($projects as $project) { ?>
                         <div class="row">
                             <div class="col-8">
-                                <p class="border-bottom"><?= $project ['urlWebSite'] ?></p>
+                                <p class="border-bottom"><?= $project ['name'] ?></p>
                             </div>
-                            <div class="col-2"><a href=""><i class="ri-global-line"></i></a> </div>
-                            <div class="col-2"><a href=""><i class="ri-github-fill"></i></a> </div>
+                            <div class="col-2"><a href="<?= $project ['urlWebSite'] ?>"><i class="ri-global-line"></i></a> </div>
+                            <div class="col-2"><a href="<?= $project ['urlRepo'] ?>"><i class="ri-github-fill"></i></a> </div>
                         </div>
 
                     <?php } ?>
