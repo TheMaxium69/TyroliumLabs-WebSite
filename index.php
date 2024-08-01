@@ -89,7 +89,7 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
                 <a href="labs.php?id=<?= $lab['id']; ?>">
                     <img src="file_assets/<?= $lab['background'] ?>" class="card-img-top" alt="card">
                     <div class="card-body">
-                        <img src="file_assets/logo.png" class="center-icon" alt="center-icon">
+                        <img src="file_assets/<?= $lab['icone'] ?>" class="center-icon" alt="center-icon">
                         <h5 class="card-title">
                             <?= $lab['name'] ?>
                 </a>
