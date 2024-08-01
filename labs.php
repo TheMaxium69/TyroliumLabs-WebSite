@@ -20,12 +20,6 @@ if (isset($_GET['id'])) {
         $stmtProjects->execute(['id' => $idLabsRequest]);
         $projects = $stmtProjects->fetchAll(PDO::FETCH_ASSOC);
 
-        if (!empty($projects)) {
-
-        } else {
-            echo "pas de projet trouvé";
-        }
-
         $sql = 'SELECT COUNT(*) FROM likes WHERE idLabs = :id';
         $stmt = $db->prepare($sql);
         $stmt->execute(['id' => $idLabsRequest]);
