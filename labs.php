@@ -52,7 +52,7 @@ if (!empty($_COOKIE['tokenUser'])) {
 }
 
 /******
-GET LIKE
+GET LIKES
  ******/
 $sql = 'SELECT idLabs FROM likes WHERE tokenNavigateur = :tokenNavigateur';
 $stmt = $db->prepare($sql);
@@ -68,6 +68,7 @@ if (!empty($_GET['like']) && !empty($tokenNavigateur)) {
     $sql = 'INSERT INTO `likes`(`idLabs`, `tokenNavigateur`) VALUES (:idLabs, :tokenNavigateur)';
     $stmt = $db->prepare($sql);
     $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $tokenNavigateur]);
+    header('Location: labs.php?id=' . $idLabs);
 }
 
 /******
@@ -78,6 +79,7 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
     $sql = 'DELETE FROM `likes` WHERE idLabs = :idLabs AND tokenNavigateur = :tokenNavigateur';
     $stmt = $db->prepare($sql);
     $stmt->execute(['idLabs' => $idLabs, 'tokenNavigateur' => $tokenNavigateur]);
+    header('Location: labs.php?id=' . $idLabs);
 }
 
 ?>
@@ -106,9 +108,9 @@ if (!empty($_GET['dislike']) && !empty($tokenNavigateur)) {
                     <div class=" ms-5 mt-4 ">
                         <h5>
                             <?php if (!in_array($tabsSelected['id'], $likedLabs)) { ?>
-                                <i onclick="window.location.href='?like=<?= $tabsSelected['id']; ?>';" class="ri-heart-2-line fs-1"></i>
+                                <i onclick="window.location.href='labs.php?id=<?= $tabsSelected['id'] ?>&like=<?= $tabsSelected['id']; ?>';" class="ri-heart-2-line fs-1"></i>
                             <?php } else { ?>
-                                <i onclick="window.location.href='?dislike=<?= $tabsSelected['id']; ?>';" class="ri-heart-2-fill fs-1" style="color: #0036DE;"></i>
+                                <i onclick="window.location.href='labs.php?id=<?= $tabsSelected['id'] ?>&dislike=<?= $tabsSelected['id']; ?>';" class="ri-heart-2-fill fs-1" style="color: #0036DE;"></i>
                             <?php } ?>
                         </h5>
                     </div>
