@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
 
 <main>
     <section id="labs">
-        <div class="background mb-3" style="background-image: url(file_assets/<?= $tabsSelected['background'] ?>)"></div>
+        <div class="background mb-3 blur-background" style="background-image: url(file_assets/<?= $tabsSelected['background'] ?>)"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4  ">
@@ -163,7 +163,13 @@ if (isset($_GET['id'])) {
                 background-position: center;
             }
 
+
+            .blur-background {
+            filter: blur(2px); /* Vous pouvez ajuster la valeur pour plus ou moins de flou */
+            }
+
         }
+
 
         #labs2 {
 
