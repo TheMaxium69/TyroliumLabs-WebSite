@@ -2,18 +2,18 @@
     <div class="container">
         <a class="navbar-brand logo-name" href="#">
             <img src="<?= $env_logo ?>" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            <span><?= $env_name ?></span>
+            <span class="tyro-title"><?= $env_name ?></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNav">
-            <div class="contact-btn">Contactez-nous</div>
-            <i class="ri-discord-fill mx-1"></i>
-            <i class="ri-global-line mx-1"></i>
-
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <lu class="navbar-nav mr-auto">
+                <li class="nav-item"><i class="ri-global-line mx-1"></i></li>
+                <li class="nav-item"><i class="ri-discord-fill mx-1"></i></li>
+                <li class="nav-item"><div class="contact-btn">Contactez-nous</div></li>
+            </lu>
         </div>
-
     </div>
 </nav>
 
@@ -28,6 +28,10 @@
         font-weight: 400;
         font-style: normal;
         font-size: 14px;
+    }
+
+    .tyro-title {
+        border-bottom: 2px solid blue;
     }
 
     nav i {
