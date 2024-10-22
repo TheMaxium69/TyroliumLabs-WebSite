@@ -9,6 +9,16 @@
 
     <?php $cp_hero() ?>
 
+    <div class="">
+        <h1>
+            Nos labs <i class="ri-arrow-right-s-line"></i>
+        </h1>
+    </div>
+
+    <style>
+
+    </style>
+
     <?php $cp_cards() ?>
 
 </main>
