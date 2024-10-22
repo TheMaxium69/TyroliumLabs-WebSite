@@ -9,7 +9,7 @@
     <?php $cp_heroshow() ?>
 
     <?php $cp_moreshow() ?>
-    <?php $cp_usershow() ?>
+    <?php $cp_useshow() ?>
 
 
 </main>
