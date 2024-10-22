@@ -2,22 +2,19 @@
 
 
 
-
 <header> <?php $cp_navbar(); ?> </header>
 
 <main>
 
-    <p><?= $env_titre ?></p>
+    <?php $cp_heroshow() ?>
+
 
 </main>
 
 
+<?php $cp_footer() ?>
+
 <?php $js_exemple(); ?>
-
-
-
-
-
 
 
 

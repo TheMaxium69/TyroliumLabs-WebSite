@@ -7,10 +7,14 @@
 
 <main>
 
-    <p><?= $env_titre ?></p>
+    <?php $cp_hero() ?>
+
+    <?php $cp_cards() ?>
 
 </main>
 
+
+<?php $cp_footer() ?>
 
 <?php $js_exemple(); ?>
 
