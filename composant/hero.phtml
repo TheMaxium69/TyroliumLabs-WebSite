@@ -16,7 +16,7 @@
     #hero { 
         background-color: #0036DE;
         padding-bottom: 20px;
-
+        
         h2 {
             text-align: center;
             padding-bottom: 30px;
@@ -24,16 +24,17 @@
             width: 50%;
             margin: auto;
         }
-
+        
         .text-container {
             text-align: center;
-            padding-top: 20px;
+            padding: 20px 20px 0px;
         }
 
         .container {
             background-color: white;
-            padding: 50px;
+            padding: 0px 50px 30px 50px;
             border-radius: 0px 0px 15px 15px;
+            width: 840px;
         }
 
         i {
@@ -41,6 +42,13 @@
             display: flex;
             justify-content: center;
         }
+
+        @media (max-width: 580px) { 
+            .container {
+                width: 100%;
+            }
+        }
+
 
     }
 
