@@ -1,25 +1,51 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand logo-name" href="#">
             <img src="<?= $env_logo ?>" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            <?= $env_name ?>
+            <span><?= $env_name ?></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <?php for ($i = 0; $i < count($env_page); $i++) {
-                    if ($i !== 0){ ?>
-                    <li class="nav-item">
-                        <?php if ($i === $page_id) {  ?>
-                        <a class="nav-link active" style="text-decoration: underline" href="<?= $env_page[$i]['url'] ?>"><?= $env_page[$i]['name'] ?></a>
-                        <?php } else {  ?>
-                        <a class="nav-link" href="<?= $env_page[$i]['url'] ?>"><?= $env_page[$i]['name'] ?></a>
-                        <?php } ?>
-                    </li>
-                <?php }} ?>
-            </ul>
+        <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNav">
+            <div class="contact-btn">Contactez-nous</div>
+            <i class="ri-discord-fill mx-1"></i>
+            <i class="ri-global-line mx-1"></i>
+
         </div>
+
     </div>
 </nav>
+
+<style>
+    nav {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) ;
+        position: fixed;
+    }
+
+    nav .logo-name {
+        font-family: "Share Tech Mono", monospace;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+    }
+
+    nav i {
+        cursor: pointer;
+    }
+
+    nav .contact-btn {
+        font-size: 10px;
+        background-color: #0036DE;
+        border-radius: 11px ;
+        color: white;
+        box-shadow: -2px 3px 4px rgba(0, 0, 0, 0.25) ;
+        padding: 8px 20px;
+    }
+
+    nav .contact-btn:hover {
+        cursor: pointer;
+    }
+
+
+</style>
