@@ -5,7 +5,7 @@
 
 <header> <?php $cp_navbar(); ?> </header>
 
-<main>
+<main id="pageone">
 
     <?php $cp_hero() ?>
 
@@ -51,6 +51,13 @@
     <?php $cp_cards() ?>
 
 </main>
+
+<style>
+    main#pageone{
+        margin-bottom: 50px;
+    }
+
+</style>
 
 
 <?php $cp_footer() ?>
