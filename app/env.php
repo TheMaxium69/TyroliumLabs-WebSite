@@ -7,7 +7,7 @@
  ************************/
 
 //prod OR dev
-$APP_ENV = "prod";
+$APP_ENV = "dev";
 
 // Link Variable
 $SYSTEM_FRAMEWORK = "@tyrositeframework/";
