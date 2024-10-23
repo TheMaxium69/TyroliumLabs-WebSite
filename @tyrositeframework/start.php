@@ -1,6 +1,7 @@
 <?php
 
 require "app/env.php";
+require "api/app.php";
 
 require_once $SYSTEM_FRAMEWORK . "function/default.php";
 require_once $SYSTEM_FRAMEWORK . "function/generate.php";
