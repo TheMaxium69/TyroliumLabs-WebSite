@@ -51,6 +51,7 @@
 <style>
         #paginationcadre {
             border-top: 2px solid #0036DE;
+            margin-top: 50px;
         }
         
         #pagination{
