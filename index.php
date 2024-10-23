@@ -40,6 +40,13 @@
             border-left: 1px solid #0036DE;
         }
 
+        #titlemain h1{
+            font-family: "Share Tech Mono", monospace;
+            font-size: 24px;
+            font-weight: 400;
+            margin: 15px 0;
+        }
+
 
     </style>
 
