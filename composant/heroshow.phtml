@@ -3,24 +3,33 @@
     </div>
 
     <div class="container">
-        <div class="row align-items-center">
+        <div class="rowamoi">
             <div class="col-lg-2">
                 <div class="d-flex justify-content-center" id="toolLogo">
                     <div id="logo">
                     </div>
                 </div>
             </div>
-            <div class="offset-lg-2 col-lg-4">
+            <div class="offset-lg-2 col-lg-4 desktop-hero">
                 <div class="d-flex justify-content-center" id="title">
                     <h1>TyroSiteFrameWork</h1>
                 </div>
             </div>
-            <div class="offset-lg-2 col-lg-1">
+            <div class="offset-lg-2 col-lg-1 desktop-hero">
                 <div class="d-flex justify-content-center">
                 <i class="ri-heart-3-fill"></i>
                 </div>
             </div>
 
+        </div>
+
+        <div class="mobile-hero">
+            <div class="offset-lg-2 col-lg-4 ">
+                <div class="d-fex-perso" id="title">
+                    <h1>TyroSiteFrameWork</h1>
+                    <i class="ri-heart-3-fill"></i>
+                </div>
+            </div>
         </div>
 
         <div class="row">
@@ -44,7 +53,7 @@
         align-content: center;
         justify-content: center;
         flex-wrap: nowrap;
-    flex-direction: row;
+        flex-direction: row;
     }
 
     #heroshow #title {
@@ -84,6 +93,37 @@
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
+    }
+
+    #heroshow .rowamoi{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #heroshow .mobile-hero{
+        display: none;
+    }
+
+    #heroshow .d-fex-perso{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media (max-width: 991px) {
+        #heroshow .desktop-hero{
+            display: none;
+        }
+
+        #heroshow .mobile-hero{
+            display: block;
+            margin-bottom: 50px;
+        }
+
+        #heroshow i {
+            font-size: 40px;
+        }
     }
 
 </style>
