@@ -40,7 +40,7 @@
             border-right: 2px solid #0036DE;
         }
 
-        @media (max-width: 580px) {
+        @media (max-width: 767px) {
             #titlemain h1 {
                 border: none
             } 
