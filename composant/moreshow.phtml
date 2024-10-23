@@ -3,11 +3,23 @@
 
     <div class="col-md-6">
       <div class="info-card">
-        <span><strong>Version :</strong></span> <span>2.0</span>
-        <p><strong>Contributeur :</strong> <a href="#">Maxime Tournier</a></p>
-        <p><strong>Commit :</strong> <span>435</span></p>
-        <p><strong>Like :</strong> <span>8000</span></p>
-        <p><strong>Repos :</strong></p>
+        <div class="info-row">
+          <strong class="label">Version :</strong>
+          <span class="value">2.0</span>
+        </div>
+        <div class="info-row">
+          <strong class="label">Contributeur :</strong>
+          <a href="#" class="value">Maxime Tournier</a>
+        </div>
+        <div class="info-row">
+          <strong class="label">Commit :</strong>
+          <span class="value">435</span>
+        </div>
+        <div class="info-row">
+          <strong class="label">Like :</strong>
+          <span class="value">8000</span>
+        </div>
+        <p><strong>Repos : </strong></p>
         <div class="repo-link">
           <i class="ri-github-fill"></i>
           <a href="#">TheMaxium69/TyroSiteFrameWork</a>
@@ -33,6 +45,23 @@
     font-weight: 400;
     font-style: normal;
     color: black;
+    position: relative;
+    }
+
+    .info-row {
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .info-row .label {
+      position: absolute;
+      left: 20px;
+    }
+
+    .infow-row .value {
+      display: block;
+      width: 100%;
+      text-align: center;
     }
 
     .info-card p {
