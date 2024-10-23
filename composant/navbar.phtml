@@ -1,33 +1,36 @@
-<nav class="navbar navbar-expand-lg">
+<div id="nav">
+
+</div>
+<nav class="navbar navbar-expand bg-white fixed-top">
     <div class="container">
         <a class="navbar-brand logo-name" href="#">
-            <img src="<?= $env_logo ?>" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <img src="<?= $env_logo ?>" alt="Logo" class="d-inline-block align-text-top logo-img">
             <span class="tyro-title"><?= $env_name ?></span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <lu class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav mr-auto align-items-center">
                 <li class="nav-item"><i class="ri-global-line mx-1"></i></li>
-                <li class="nav-item"><i class="ri-discord-fill mx-1"></i></li>
+                <li class="nav-item"><i class="ri-discord-fill mx-2"></i></li>
                 <li class="nav-item contact-btn">Contactez-nous</li>
-            </lu>
+            </ul>
         </div>
     </div>
 </nav>
 
 <style>
     nav {
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) ;
-        position: fixed;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    nav .logo-img {
+        width: 28px;
+        height: auto;
     }
 
     nav .logo-name {
-        font-family: "Share Tech Mono", monospace;
+        font-family: "Share Tech Mono", serif;
         font-weight: 400;
         font-style: normal;
-        font-size: 14px;
     }
 
     .tyro-title {
@@ -43,17 +46,28 @@
     }
 
     nav .contact-btn {
-        font-size: 10px;
+        font-size: 14px ;
         background-color: #0036DE;
-        border-radius: 11px ;
+        border-radius: 15px ;
         color: white;
         box-shadow: -2px 3px 4px rgba(0, 0, 0, 0.25) ;
-        padding: 8px 12px;
+        padding: 10px 15px;
+        margin-left: ;
     }
 
     nav .contact-btn:hover {
         cursor: pointer;
-        background-color: #0028A6;
+        background-color: #132585;
+    }
+
+    #nav {
+        height: 57px;
+    }
+
+    @media (max-width: 420px) {
+        i {
+            display: none;
+        }
     }
 
 
