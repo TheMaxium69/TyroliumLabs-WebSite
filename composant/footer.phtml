@@ -1,5 +1,5 @@
 <footer class="bd-footer py-2 py-md-3 mt-2 bg-white tyro-border">
-    <div class="container py-2 py-md-5 px-4 px-md-3 text-body-secondary">
+    <div class="container py-2 py-md-5 px-4 px-md-3 text-body-secondary footer-desktop">
         <div class="row">
         <div class="col-lg-3 mb-3 share-tech-mono">
             <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/" aria-label="Bootstrap">
@@ -18,23 +18,51 @@
         </div>
         </div>
     </div>
+
+    <div class="container py-2 py-md-5 px-4 px-md-3 text-body-secondary footer-mobile">
+        <div class="col-lg-3 mb-3 share-tech-mono text-center">
+            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/" aria-label="Bootstrap">
+            <img src="file_assets/logo.png" width="28" height="27">
+            <span class="fs-5 px-2">Labs.Tyrolium</span>
+            </a>
+        </div>
+        <div class="d-flex">
+            <div class="flex-row text-dark share-tech">
+                <h5>BUTTOM</h5>
+                <h5>BUTTOM</h5>
+                <h5>BUTTOM</h5>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&display=swap');
-    .share-tech {
+    footer .share-tech {
         font-family: "Share Tech", serif;
         font-weight: 400;
         font-style: normal;
     }
-    .share-tech-mono {
+    footer .share-tech-mono {
         font-family: "Share Tech Mono", serif;
         font-weight: 400;
         font-style: normal;
     }
-    .tyro-border {
+     footer.tyro-border {
         border-width: thick;
         border-top: solid #0036DE;
+    }
+    footer .footer-mobile {
+        display: none;
+
+    }
+    @media (max-width: 991px) {
+        footer .footer-desktop {
+            display: none;
+        }
+        footer .footer-mobile {
+            display: block;
+        }
     }
 </style>
