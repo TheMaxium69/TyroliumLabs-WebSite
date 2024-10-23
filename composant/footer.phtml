@@ -1,5 +1,5 @@
-<footer class="bd-footer py-2 py-md-3 mt-2 bg-white tyro-border">
-    <div class="container py-2 py-md-5 px-4 px-md-3 text-body-secondary footer-desktop">
+<footer class="mt-4 tyro-border">
+    <div class="container py-4 py-md-4 text-body-secondary footer-desktop">
         <div class="row">
         <div class="col-lg-3 mb-3 share-tech-mono">
             <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/" aria-label="Bootstrap">
@@ -19,19 +19,17 @@
         </div>
     </div>
 
-    <div class="container py-2 py-md-5 px-4 px-md-3 text-body-secondary footer-mobile">
+    <div class="container py-4 py-md-4 text-body-secondary footer-mobile">
         <div class="col-lg-3 mb-3 share-tech-mono text-center">
             <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="/" aria-label="Bootstrap">
             <img src="file_assets/logo.png" width="28" height="27">
             <span class="fs-5 px-2">Labs.Tyrolium</span>
             </a>
         </div>
-        <div class="d-flex">
-            <div class="flex-row text-dark share-tech">
-                <h5>BUTTOM</h5>
-                <h5>BUTTOM</h5>
-                <h5>BUTTOM</h5>
-            </div>
+        <div class="d-flex flex-row text-dark share-tech justify-content-around">
+            <h5>BUTTOM</h5>
+            <h5>BUTTOM</h5>
+            <h5>BUTTOM</h5>
         </div>
     </div>
 </footer>
@@ -53,9 +51,10 @@
         border-width: thick;
         border-top: solid #0036DE;
     }
-    footer .footer-mobile {
+    @media (min-width: 992px) {
+        footer .footer-mobile {
         display: none;
-
+    }
     }
     @media (max-width: 991px) {
         footer .footer-desktop {
@@ -63,6 +62,13 @@
         }
         footer .footer-mobile {
             display: block;
+            flex-direction: row;
+        }
+        footer h5 {
+            display: inline-block;
+        }
+        footer span {
+            border-bottom: 2px solid #0028A6;
         }
     }
 </style>
