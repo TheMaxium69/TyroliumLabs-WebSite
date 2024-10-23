@@ -1,7 +1,7 @@
 <section id="moreshow" class="container">
   <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="info-card">
         <div class="info-row">
           <strong class="label">Version :</strong>
@@ -49,19 +49,22 @@
     }
 
     .info-row {
+      display: flex;
+      align-items: center;
       padding: 10px 0;
-      text-align: center;
+      
     }
 
     .info-row .label {
-      position: absolute;
-      left: 40px;
+      width: 150px;
+      text-align: left;
+      margin-right: 20px;
     }
 
     .infow-row .value {
-      display: block;
-      width: 100%;
-      text-align: start;
+      text-align: left;
+      padding-left: 20px;
+      min-width: 100px;
     }
 
     .info-card p {
