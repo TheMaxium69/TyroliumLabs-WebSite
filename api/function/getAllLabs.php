@@ -1,12 +1,13 @@
 <?php
 
 function getAllLabs() {
-    require 'app/database.dev.php';
+    require '../../app/database.dev.php';
 
     $query = $db->query('SELECT * FROM labs');
-    $labs = $query->fetchAll(PDO::FETCH_ASSOC);
+    $labAll = $query->fetchAll(PDO::FETCH_ASSOC);
+    $tempLabAll = [];
 
-    foreach ($labs as $lab) {
+    foreach ($labAll as $lab) {
         $stmt = $db->prepare('SELECT pictureUrl FROM picture WHERE id = :id');
 
         $stmt->execute(['id' => $lab['iconeId']]);
@@ -15,17 +16,13 @@ function getAllLabs() {
         $stmt->execute(['id' => $lab['backgroundId']]);
         $backgroundUrl = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        var_dump($iconeUrl);
-        var_dump($backgroundUrl);
-
         $lab['iconeUrl'] = $iconeUrl['pictureUrl'];
         $lab['backgroundUrl'] = $backgroundUrl['pictureUrl'];
 
-        var_dump($lab);
+        array_push($tempLabAll, $lab);
     }
 
-    var_dump($labs);
-    return $labs;
+//    var_dump($tempLabAll);
+    return $tempLabAll;
 }
 
-getAllLabs();

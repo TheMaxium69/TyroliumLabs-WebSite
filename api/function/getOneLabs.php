@@ -1,7 +1,5 @@
 <?php
 
-getOneLabs(1);
-
 function getOneLabs(int $labsId) {
     require '../../app/database.dev.php';
 
