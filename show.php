@@ -1,6 +1,22 @@
 <?php $page_id = 2; require "@tyrositeframework/start.php"; ?>
 
+<?php
 
+$idSelected = $_GET['l'];
+$labsSelected = "";
+
+if(empty($idSelected)){
+
+    $cp_404();
+    exit();
+
+} else {
+
+    $labsSelected = getOneLabs($idSelected);
+
+}
+
+?>
 
 <header> <?php $cp_navbar(); ?> </header>
 
