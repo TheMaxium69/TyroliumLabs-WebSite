@@ -13,7 +13,6 @@ if(empty($idSelected)){
 } else {
 
     $labsSelected = getOneLabs($idSelected);
-
 }
 
 ?>
