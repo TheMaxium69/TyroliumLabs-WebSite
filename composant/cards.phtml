@@ -7,109 +7,26 @@ $allLabs = getAllLabs();
 <section id="card">
     <div class="container">
         <div class="row">
-             <!-- CARD COMPOSANT -->
-            <div class="col-md-6">
-                <div class="card clickable-card">
-                    <div class="card-img">
-                        <img src="https://img.freepik.com/photos-gratuite/codage-programme-informatique-ecran_53876-138060.jpg" alt="Card Background" class="background-image">
-                        <div class="logo-container">
-                            <img src="http://tyrolium.fr/Contenu/Image/Tyrolium%20Site.png" alt="Logo" class="logo-img">
+            <?php
+                foreach ($allLabs as $lab) { ?>
+                        <div class="col-md-6">
+                            <div class="card clickable-card">
+                                <div class="card-img">
+                                    <img src=<?= $lab['backgroundUrl']?> alt="Card Background" class="background-image">
+                                    <div class="logo-container">
+                                        <img src=<?= $lab['iconeUrl']?> alt="Logo" class="logo-img">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text-container">
+                                        <span class="card-title"><?= $lab['title'] ?></span>
+                                        <i id="heart-icon" class="ri-heart-3-line heart-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text-container">
-                            <span class="card-title">TyroSiteFrameWork</span>
-                            <i id="heart-icon" class="ri-heart-3-line heart-icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- CARD COMPOSANT -->
-            <div class="col-md-6">
-                <div class="card clickable-card">
-                    <div class="card-img">
-                        <img src="https://img.freepik.com/photos-gratuite/codage-programme-informatique-ecran_53876-138060.jpg" alt="Card Background" class="background-image">
-                        <div class="logo-container">
-                            <img src="http://tyrolium.fr/Contenu/Image/Tyrolium%20Site.png" alt="Logo" class="logo-img">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text-container">
-                            <span class="card-title">TyroSiteFrameWork</span>
-                            <i id="heart-icon" class="ri-heart-3-line heart-icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- CARD COMPOSANT -->
-            <div class="col-md-6">
-                <div class="card clickable-card">
-                    <div class="card-img">
-                        <img src="https://img.freepik.com/photos-gratuite/codage-programme-informatique-ecran_53876-138060.jpg" alt="Card Background" class="background-image">
-                        <div class="logo-container">
-                            <img src="http://tyrolium.fr/Contenu/Image/Tyrolium%20Site.png" alt="Logo" class="logo-img">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text-container">
-                            <span class="card-title">TyroSiteFrameWork</span>
-                            <i id="heart-icon" class="ri-heart-3-line heart-icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- CARD COMPOSANT -->
-            <div class="col-md-6">
-                <div class="card clickable-card">
-                    <div class="card-img">
-                        <img src="https://img.freepik.com/photos-gratuite/codage-programme-informatique-ecran_53876-138060.jpg" alt="Card Background" class="background-image">
-                        <div class="logo-container">
-                            <img src="http://tyrolium.fr/Contenu/Image/Tyrolium%20Site.png" alt="Logo" class="logo-img">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text-container">
-                            <span class="card-title">TyroSiteFrameWork</span>
-                            <i id="heart-icon" class="ri-heart-3-line heart-icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- CARD COMPOSANT -->
-            <div class="col-md-6">
-                <div class="card clickable-card">
-                    <div class="card-img">
-                        <img src="https://img.freepik.com/photos-gratuite/codage-programme-informatique-ecran_53876-138060.jpg" alt="Card Background" class="background-image">
-                        <div class="logo-container">
-                            <img src="http://tyrolium.fr/Contenu/Image/Tyrolium%20Site.png" alt="Logo" class="logo-img">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text-container">
-                            <span class="card-title">TyroSiteFrameWork</span>
-                            <i id="heart-icon" class="ri-heart-3-line heart-icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- CARD COMPOSANT -->
-            <div class="col-md-6">
-                <div class="card clickable-card">
-                    <div class="card-img">
-                        <img src="https://img.freepik.com/photos-gratuite/codage-programme-informatique-ecran_53876-138060.jpg" alt="Card Background" class="background-image">
-                        <div class="logo-container">
-                            <img src="http://tyrolium.fr/Contenu/Image/Tyrolium%20Site.png" alt="Logo" class="logo-img">
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text-container">
-                            <span class="card-title">TyroSiteFrameWork</span>
-                            <i id="heart-icon" class="ri-heart-3-line heart-icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                <?php }
+            ?>
         </div>
     </div>
 </section>
