@@ -1,6 +1,12 @@
 <?php $page_id = 2; require "@tyrositeframework/start.php"; ?>
 
 <?php
+
+/*
+ *
+ * GET LABS SELECTED
+ *
+ * */
 $idSelected = $_GET['l'];
 $labsSelected = "";
 
@@ -13,6 +19,26 @@ if(empty($idSelected)){
 
     $labsSelected = getOneLabs($idSelected);
 }
+
+/*
+ *
+ * IS LIKE ?
+ *
+ * */
+
+if(!empty($_GET['i'])){
+
+    $isLiked = addLike($idSelected, "");
+
+    if ($isLiked){
+
+        echo '<script>window.location.href = "show.php?l='. $idSelected .'"</script>';
+
+    }
+
+}
+
+
 
 ?>
 

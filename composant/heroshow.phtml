@@ -1,11 +1,12 @@
 <?php $lab = getOneLabs($_GET['l']) ?>
 
-<section id = "heroshow">
-    <div id = "sliderheroshow">
+<section id="heroshow">
+    <div id="sliderheroshow">
     </div>
 
     <div class="container">
         <div class="rowamoi">
+
             <div class="col-lg-2">
                 <div class="d-flex justify-content-center" id="toolLogo">
                     <div id="logo">
@@ -19,7 +20,8 @@
             </div>
             <div class="offset-lg-2 col-lg-1 desktop-hero">
                 <div class="d-flex justify-content-center">
-                <i class="ri-heart-3-fill"></i>
+<!--                <i class="ri-heart-3-fill"></i>-->
+                    <i onclick="window.location.href = '?l=<?= $lab['id'] ?>&i=t'; " class="ri-heart-3-line"></i>
                 </div>
             </div>
 
