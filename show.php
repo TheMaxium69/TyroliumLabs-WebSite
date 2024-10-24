@@ -28,7 +28,21 @@ if(empty($idSelected)){
 
 if(!empty($_GET['i'])){
 
-    $isLiked = addLike($idSelected, "");
+    $MyToken = "";
+
+    if(empty($_COOKIE['token_nav'])){
+
+        $newToken = md5(uniqid() . uniqid());
+        setcookie("token_nav", $newToken);
+        $MyToken = $newToken;
+
+    } else {
+
+        $MyToken = $_COOKIE['token_nav'];
+
+    }
+
+    $isLiked = addLike($idSelected, $MyToken);
 
     if ($isLiked){
 
@@ -37,7 +51,6 @@ if(!empty($_GET['i'])){
     }
 
 }
-
 
 
 ?>
