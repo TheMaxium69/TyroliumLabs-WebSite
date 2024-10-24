@@ -75,29 +75,40 @@ if(!empty($_GET['i'])){
 
     <?php 
         $allLabs = getAllLabs();
+//        var_dump($allLabs);
+        $tempCurrentIndex = 0;
 
         for($i=0; $i < sizeof($allLabs); $i++){
+            $oneLabs = $allLabs[$i];
+//            var_dump($oneLabs['id']);
             if($allLabs[$i]['id'] == $labsSelected['id']){
-                $currentIndexLabs = $i;
-                break;
+                $tempCurrentIndex = $i;
             }
         }
+
+        $prevLabsIndex = $tempCurrentIndex-1;
+        $nextLabsIndex = $tempCurrentIndex+1;
+        var_dump($nextLabsIndex);
     
     ?>
 
     <div id="paginationcadre">
         <div class="container" id="pagination">
             <div class="col-lg-6 desktop">
-                <h1 id="prev" onclick="window.location.href = 'show.php?l=<?= $allLabs[$currentIndexLabs - 1] ?>';">
-                <i class="ri-arrow-left-circle-line"></i>
-                    Page précédante
-                </h1>
+                <?php if(!empty($allLabs[$prevLabsIndex])){ ?>
+                    <h1 id="prev" onclick="window.location.href = 'show.php?l=<?= $allLabs[$prevLabsIndex]['id'] ?>';">
+                    <i class="ri-arrow-left-circle-line"></i>
+                        Page précédante
+                    </h1>
+                <?php } ?>
             </div>
             <div class="col-lg-6 desktop">
-                <h1>
-                    Page suivante
-                    <i class="ri-arrow-right-circle-line"></i>
-                </h1>
+                <?php if(!empty($allLabs[$nextLabsIndex])){ ?>
+                    <h1 onclick="window.location.href = 'show.php?l=<?= $allLabs[$nextLabsIndex]['id'] ?>';">
+                        Page suivante
+                        <i class="ri-arrow-right-circle-line"></i>
+                    </h1>
+                <?php } ?>
             </div>
             <div class="col-lg-6 mobile">
                 <h1 id="prev">
