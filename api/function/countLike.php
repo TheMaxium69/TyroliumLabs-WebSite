@@ -9,7 +9,7 @@ function countLike(int $idLabs) {
     $stmt = $db->prepare('SELECT COUNT(*) AS total FROM like_labs WHERE idLabs = ?');
     $stmt->execute([$idLabs]);
     
-    $results = $stmt->fetch();
+    $results = $stmt->fetch(PDO::FETCH_ASSOC);
     $total = $results['total'];
 
     return $total;

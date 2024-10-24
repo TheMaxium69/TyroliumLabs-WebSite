@@ -1,7 +1,6 @@
 <?php $page_id = 2; require "@tyrositeframework/start.php"; ?>
 
 <?php
-
 $idSelected = $_GET['l'];
 $labsSelected = "";
 

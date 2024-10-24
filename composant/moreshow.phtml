@@ -1,3 +1,17 @@
+<?php 
+  $lab = getOneLabs($_GET['l']);
+
+  $repoUrl = $lab['repoUrl'];
+  $githubPrefix = "https://github.com/";
+
+  $displayRepo = (substr($repoUrl, strlen($githubPrefix)));
+
+
+?>
+
+
+
+
 <section id="moreshow">
 
       <div class="info-card">
@@ -15,12 +29,12 @@
         </div>
         <div class="info-row">
           <strong class="label">Like :</strong>
-          <span class="value">8000</span>
+          <span class="value"><?= htmlentities($lab['likes']);?></span>
         </div>
         <p><strong>Repos : </strong></p>
         <div class="repo-link">
           <i class="ri-github-fill"></i>
-          <a href="#">TheMaxium69/TyroSiteFrameWork</a>
+          <a href="<?= htmlentities($lab['repoUrl'])?>"><?= htmlentities($displayRepo)?></a>
         </div>
 
   </div>
