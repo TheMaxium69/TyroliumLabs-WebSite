@@ -4,7 +4,7 @@
   $repoUrl = $lab['repoUrl'];
   $githubPrefix = "https://github.com/";
 
-  $displayRepo = (substr($repoUrl, strlen($githubPrefix)));
+  $displayRepo = substr($repoUrl, strlen($githubPrefix));
 
 
 ?>
@@ -29,12 +29,12 @@
         </div>
         <div class="info-row">
           <strong class="label">Like :</strong>
-          <span class="value"><?= htmlentities($lab['likes']);?></span>
+          <span class="value"><?= $lab['likes'] ?></span>
         </div>
         <p><strong>Repos : </strong></p>
         <div class="repo-link">
           <i class="ri-github-fill"></i>
-          <a href="<?= htmlentities($lab['repoUrl'])?>"><?= htmlentities($displayRepo)?></a>
+          <a target="_blank" href="<?= $lab['repoUrl'] ?>"><?= $displayRepo ?></a>
         </div>
 
   </div>
