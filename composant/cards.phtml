@@ -9,17 +9,17 @@ $allLabs = getAllLabs();
         <div class="row">
             <?php
                 foreach ($allLabs as $lab) { ?>
-                        <div class="col-md-6">
+                        <div class="col-md-6" onclick="window.location.href = 'show.php?l=<?= $lab['id'] ?>'; ">
                             <div class="card clickable-card">
                                 <div class="card-img">
-                                    <img src=<?= htmlentities($lab['backgroundUrl'])?> alt="Card Background" class="background-image">
+                                    <img src="<?= $lab['backgroundUrl'] ?>" alt="Card Background" class="background-image">
                                     <div class="logo-container">
-                                        <img src=<?= htmlentities($lab['iconeUrl'])?> alt="Logo" class="logo-img">
+                                        <img src="<?= $lab['iconeUrl'] ?>" alt="Logo" class="logo-img">
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="card-text-container">
-                                        <span class="card-title"><?= htmlentities($lab['title']) ?></span>
+                                        <span class="card-title"><?= $lab['title'] ?></span>
                                         <i id="heart-icon" class="ri-heart-3-line heart-icon"></i>
                                     </div>
                                 </div>
