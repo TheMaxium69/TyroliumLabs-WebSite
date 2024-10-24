@@ -2,15 +2,11 @@
   $lab = getOneLabs($_GET['l']);
 
   $repoUrl = $lab['repoUrl'];
-  $githubPrefix = "https://github.com/";
 
-  $displayRepo = substr($repoUrl, strlen($githubPrefix));
+  $displayRepo = substr($repoUrl, strlen($repoUrlGlobal));
 
 
 ?>
-
-
-
 
 <section id="moreshow">
 

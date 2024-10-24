@@ -70,3 +70,5 @@ $env_js_global = array(
  *     YOUR VARIABLE
  *
  ************************/
+
+$repoUrlGlobal = "https://github.com/";
