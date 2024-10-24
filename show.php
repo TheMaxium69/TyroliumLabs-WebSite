@@ -77,8 +77,8 @@ if(!empty($_GET['i'])){
         $allLabs = getAllLabs();
 
         for($i=0; $i < sizeof($allLabs); $i++){
-            if($allLabs[$j]['id'] == $labsSelected['id']){
-                $currentIndexLabs = $j;
+            if($allLabs[$i]['id'] == $labsSelected['id']){
+                $currentIndexLabs = $i;
                 break;
             }
         }
