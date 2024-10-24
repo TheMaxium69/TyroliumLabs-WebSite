@@ -1,7 +1,8 @@
 <?php
 
 function getAllLabs() {
-    require '../../app/database.dev.php';
+    require "app/env.php";
+    require $DATABASE;
 
     $query = $db->query('SELECT * FROM labs');
     $labAll = $query->fetchAll(PDO::FETCH_ASSOC);
