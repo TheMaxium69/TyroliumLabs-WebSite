@@ -1,6 +1,32 @@
 <?php $page_id = 1; require "@tyrositeframework/start.php"; ?>
 
+<?php
 
+if (!empty($_GET['liked'])) {
+
+    $MyToken = "";
+
+    if(empty($_COOKIE['token_nav'])){
+
+        $newToken = md5(uniqid() . uniqid());
+        setcookie("token_nav", $newToken);
+        $MyToken = $newToken;
+
+    } else {
+
+        $MyToken = $_COOKIE['token_nav'];
+
+    }
+
+    $isLiked = addLike($_GET['liked'], $MyToken);
+
+    echo "<script>window.location.href = 'index.php'</script>";
+
+
+}
+
+
+?>
 
 
 <header> <?php $cp_navbar(); ?> </header>
