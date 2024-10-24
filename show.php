@@ -73,11 +73,22 @@ if(!empty($_GET['i'])){
     </div>
 
 
+    <?php 
+        $allLabs = getAllLabs();
+
+        for($i=0; $i < sizeof($allLabs); $i++){
+            if($allLabs[$j]['id'] == $labsSelected['id']){
+                $currentIndexLabs = $j;
+                break;
+            }
+        }
     
+    ?>
+
     <div id="paginationcadre">
         <div class="container" id="pagination">
             <div class="col-lg-6 desktop">
-                <h1 id="prev">
+                <h1 id="prev" onclick="window.location.href = 'show.php?l=<?= $allLabs[$currentIndexLabs - 1] ?>';">
                 <i class="ri-arrow-left-circle-line"></i>
                     Page précédante
                 </h1>
