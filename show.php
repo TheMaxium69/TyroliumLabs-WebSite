@@ -73,14 +73,13 @@ if(!empty($_GET['i'])){
     </div>
 
 
-    <?php 
+    <?php
+    
         $allLabs = getAllLabs();
-//        var_dump($allLabs);
         $tempCurrentIndex = 0;
 
         for($i=0; $i < sizeof($allLabs); $i++){
             $oneLabs = $allLabs[$i];
-//            var_dump($oneLabs['id']);
             if($allLabs[$i]['id'] == $labsSelected['id']){
                 $tempCurrentIndex = $i;
             }
@@ -88,7 +87,6 @@ if(!empty($_GET['i'])){
 
         $prevLabsIndex = $tempCurrentIndex-1;
         $nextLabsIndex = $tempCurrentIndex+1;
-        var_dump($nextLabsIndex);
     
     ?>
 
