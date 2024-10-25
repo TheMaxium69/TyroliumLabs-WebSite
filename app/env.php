@@ -38,7 +38,11 @@ $env_lang = "fr"; /* for <html lang=""> */
 // PAGE MANAGEMENT
 $env_page = array(
     //404
-    0 => "404 | " . $env_name,
+    0 => array(
+        "title" => "404 | " . $env_name,
+        "url" => "./404.php",
+        "css" => "404.css",
+    ),
     //Page
     1 => array(
         "title" => $env_name,
