@@ -12,12 +12,17 @@ $labsSelected = "";
 
 if(empty($idSelected)){
 
-    $cp_404();
+    echo '<script>window.location.href = "404.php"</script>';
     exit();
 
 } else {
 
     $labsSelected = getOneLabs($idSelected);
+
+    if(empty($labsSelected)){
+        echo '<script>window.location.href = "404.php"</script>';
+        exit();
+    }
 }
 
 /*

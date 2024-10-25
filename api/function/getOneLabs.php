@@ -9,8 +9,10 @@ function getOneLabs(int $labsId) {
     $results = $stmt->fetch(PDO::FETCH_ASSOC);
 //    var_dump($results);
 
-    $likes = countLike($labsId);
-    $results['likes'] = $likes;
+    if ($results) {
+        $likes = countLike($labsId);
+        $results['likes'] = $likes;
+    }
 
     return $results;
 
