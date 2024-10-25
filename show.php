@@ -248,6 +248,7 @@ if(!empty($_GET['d'])) {
         
         .shows {
             flex-direction: column;
+            align-items: center;
         }
     }
 
