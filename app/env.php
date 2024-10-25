@@ -76,3 +76,4 @@ $env_js_global = array(
  ************************/
 
 $repoUrlGlobal = "https://github.com/";
+$apiGithubUrl = "https://api.github.com/repos/";

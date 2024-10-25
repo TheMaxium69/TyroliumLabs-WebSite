@@ -6,22 +6,47 @@
   $displayRepo = substr($repoUrl, strlen($repoUrlGlobal));
 
 
+  $resultGithub = getGithub($displayRepo);
+
+
 ?>
 
 <section id="moreshow">
 
       <div class="info-card">
         <div class="info-row">
-          <strong class="label">Version :</strong>
-          <span class="value">2.0</span>
+          <strong class="label">Branch :</strong>
+          <span class="value"><?= $resultGithub['branch'] ?></span>
         </div>
         <div class="info-row">
-          <strong class="label">Contributeur :</strong>
-          <a href="#" class="value">Maxime Tournier</a>
+          <strong class="label">
+              <?php
+
+              $nbContribu = sizeof($resultGithub['contributors']);
+
+              if ($nbContribu == 1) {
+
+                  echo "Contributeur :";
+              } else {
+                  echo "Contributeurs :";
+              }
+              ?>
+          </strong>
+            <div class="row" style="max-width: 63%;">
+          <?php
+              foreach ($resultGithub['contributors'] as $key => $value) {
+                  ?>
+                      <div>
+                  <a target="_blank" href="<?= $value['url'] ?>" class="value"><?= $value['name'] ?></a>
+                      </div><br>
+                  <?php
+              }
+          ?>
+            </div>
         </div>
         <div class="info-row">
           <strong class="label">Commit :</strong>
-          <span class="value">435</span>
+          <span class="value"><?= $resultGithub['commit'] ?></span>
         </div>
         <div class="info-row">
           <strong class="label">Like :</strong>

@@ -6,5 +6,12 @@
 
 
 
+//$result = getGithub("TheMaxium69/Tyrolium-Site-New");
+$result = getGithub("TheMaxium69/TyroliumLabs-WebSite");
+
+var_dump($result);
+
+
+
 
 require "@tyrositeframework/end.php"; ?>
