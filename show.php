@@ -67,11 +67,11 @@ if(!empty($_GET['i'])){
     <?php $cp_heroshow() ?>
 
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-lg-4 ">
+        <div class="row" style="align-content: center;justify-content: center;">
+            <div class="col" style="max-width: 525px;">
                 <?php $cp_moreshow() ?>
             </div>
-            <div class="offset-lg-2 col-lg-6">
+            <div class="col">
                 <?php $cp_useshow() ?>
             </div>
         </div>
@@ -107,21 +107,25 @@ if(!empty($_GET['i'])){
             </div>
             <div class="col-lg-6 desktop">
                 <?php if(!empty($allLabs[$nextLabsIndex])){ ?>
-                    <h1 onclick="window.location.href = 'show.php?l=<?= $allLabs[$nextLabsIndex]['id'] ?>';">
+                    <h1 id="next" onclick="window.location.href = 'show.php?l=<?= $allLabs[$nextLabsIndex]['id'] ?>';">
                         Page suivante
                         <i class="ri-arrow-right-circle-line"></i>
                     </h1>
                 <?php } ?>
             </div>
             <div class="col-lg-6 mobile">
-                <h1 id="prev">
-                <i class="mobileIStart ri-arrow-left-circle-line"></i>
-                </h1>
+                <?php if(!empty($allLabs[$prevLabsIndex])){ ?>
+                    <h1 id="prev" onclick="window.location.href = 'show.php?l=<?= $allLabs[$prevLabsIndex]['id'] ?>';">
+                        <i class="mobileIStart ri-arrow-left-circle-line"></i>
+                    </h1>
+                <?php } ?>
             </div>
             <div class="col-lg-6 mobile">
-                <h1 id="next">
-                    <i class="mobileIEnd ri-arrow-right-circle-line"></i>
-                </h1>
+                <?php if(!empty($allLabs[$nextLabsIndex])){ ?>
+                    <h1 id="next" onclick="window.location.href = 'show.php?l=<?= $allLabs[$nextLabsIndex]['id'] ?>';">
+                        <i class="mobileIEnd ri-arrow-right-circle-line"></i>
+                    </h1>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -156,11 +160,11 @@ if(!empty($_GET['i'])){
     }
 
     #pagination #prev {
-        border-right: 1px solid #0036DE;
+        border-right: 1px solid #0036DE!important;
     }
 
     #pagination #next {
-        border-left: 1px solid #0036DE;
+        border-left: 1px solid #0036DE!important;
     }
 
     #pagination .mobile {
