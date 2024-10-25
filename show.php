@@ -119,7 +119,7 @@ if(!empty($_GET['i'])){
                 </h1>
             </div>
             <div class="col-lg-6 mobile">
-                <h1>
+                <h1 id="next">
                     <i class="mobileIEnd ri-arrow-right-circle-line"></i>
                 </h1>
             </div>
@@ -132,10 +132,6 @@ if(!empty($_GET['i'])){
 <?php $cp_footer() ?>
 
 <?php $js_exemple(); ?>
-
-
-
-<?php require "@tyrositeframework/end.php"; ?>
 
 <style>
     #paginationcadre {
@@ -160,7 +156,11 @@ if(!empty($_GET['i'])){
     }
 
     #pagination #prev {
-        border-right: 2px solid #0036DE;
+        border-right: 1px solid #0036DE;
+    }
+
+    #pagination #next {
+        border-left: 1px solid #0036DE;
     }
 
     #pagination .mobile {
@@ -196,3 +196,5 @@ if(!empty($_GET['i'])){
         }
     }
 </style>
+
+<?php require "@tyrositeframework/end.php"; ?>
