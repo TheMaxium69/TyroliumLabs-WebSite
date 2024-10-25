@@ -2,7 +2,7 @@
 
 <?php
 
-if (!empty($_GET['liked'])) {
+if (!empty($_GET['i'])) {
 
     $MyToken = "";
 
@@ -18,9 +18,9 @@ if (!empty($_GET['liked'])) {
 
     }
 
-    $isLiked = addLike($_GET['liked'], $MyToken);
+    $isLiked = addLike($_GET['i'], $MyToken);
 
-    echo "<script>window.location.href = 'index.php'</script>";
+    echo "<script>window.location.href = '.'</script>";
 
 
 }
