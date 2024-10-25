@@ -170,6 +170,11 @@ if(!empty($_GET['i'])){
     #pagination .mobile {
         display: none;
         width: 100%;
+        cursor: pointer;
+    }
+
+    #pagination .desktop {
+        cursor: pointer;
     }
     
     @media (max-width: 991px) {

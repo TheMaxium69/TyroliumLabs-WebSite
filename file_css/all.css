@@ -2,3 +2,8 @@
 main{
     min-height: calc(100vh - 142px)!important;
 }
+
+i.ri-heart-3-line,
+i.ri-heart-3-fill{
+    cursor: pointer;
+}
