@@ -24,9 +24,32 @@ $allLabs = getAllLabs();
                             <div class="card-text-container">
                                 <span class="card-title"><?= $lab['title'] ?></span>
                                 <span>
-                                    <i id="heart-icon" class="ri-heart-3-line heart-icon"
-                                    onclick="event.stopPropagation(); 
-                                    window.location.href = '?i=<?=$lab['id']?>'"></i>
+                                    <?php
+                                    $MyToken = "";
+                                    if(empty($_COOKIE['token_nav'])){
+                                        ?>
+
+                                        <i id="heart-icon" onclick="event.stopPropagation(); window.location.href = '?i=<?= $lab['id'] ?>'; " class="ri-heart-3-line heart-icon"></i>
+
+                                        <?php
+                                    } else {
+                                        $MyToken = $_COOKIE['token_nav'];
+
+                                        if (isAlreadyLiked($lab['id'], $MyToken)){
+                                            ?>
+
+                                            <i id="heart-icon" onclick="event.stopPropagation(); window.location.href = '?d=<?= $lab['id'] ?>'; " class="ri-heart-3-fill heart-icon"></i>
+
+                                            <?php
+                                        } else {
+                                            ?>
+
+                                            <i id="heart-icon" onclick="event.stopPropagation(); window.location.href = '?i=<?= $lab['id'] ?>'; " class="ri-heart-3-line heart-icon"></i>
+
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                 </span>
                             </div>
                         </div>

@@ -53,6 +53,45 @@ if(!empty($_GET['i'])){
 
     }
 
+    echo '<script>window.location.href = "show.php?l='. $idSelected .'"</script>';
+
+}
+
+
+/*
+ *
+ * DISABLE LIKE !!!!!
+ *
+ * */
+
+if(!empty($_GET['d'])) {
+
+    $MyToken = "";
+
+    if(empty($_COOKIE['token_nav'])){
+
+        $newToken = md5(uniqid() . uniqid());
+        setcookie("token_nav", $newToken);
+        $MyToken = $newToken;
+
+    } else {
+
+        $MyToken = $_COOKIE['token_nav'];
+
+    }
+
+    if (isAlreadyLiked($idSelected, $MyToken)) {
+
+        $isLiked = disableLike($idSelected,$MyToken);
+
+    } else {
+
+        echo '<script>window.location.href = "show.php?l='. $idSelected .'"</script>';
+
+    }
+
+
+    echo '<script>window.location.href = "show.php?l='. $idSelected .'"</script>';
 }
 
 

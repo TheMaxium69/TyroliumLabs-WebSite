@@ -2,6 +2,12 @@
 
 <?php
 
+/*
+ *
+ * LIKE !!
+ *
+ * */
+
 if (!empty($_GET['i'])) {
 
     $MyToken = "";
@@ -20,11 +26,51 @@ if (!empty($_GET['i'])) {
 
     if (isAlreadyLiked($_GET['i'], $MyToken)) {
 
-        echo '<script>window.location.href = "show.php?l='. $_GET['i'] .'"</script>';
+        echo '<script>window.location.href = "."</script>';
 
     } else {
 
         $isLiked = addLike($_GET['i'],$MyToken);
+
+    }
+
+    echo "<script>window.location.href = '.'</script>";
+
+
+}
+
+
+/*
+ *
+ * DISABLE LIKE !!
+ *
+ * */
+
+
+if (!empty($_GET['d'])) {
+
+    $MyToken = "";
+
+    if(empty($_COOKIE['token_nav'])){
+
+        $newToken = md5(uniqid() . uniqid());
+        setcookie("token_nav", $newToken);
+        $MyToken = $newToken;
+
+    } else {
+
+        $MyToken = $_COOKIE['token_nav'];
+
+    }
+
+    if (isAlreadyLiked($_GET['d'], $MyToken)) {
+
+        $isLiked = disableLike($_GET['d'],$MyToken);
+
+    } else {
+
+        echo '<script>window.location.href = "."</script>';
+
 
     }
 
