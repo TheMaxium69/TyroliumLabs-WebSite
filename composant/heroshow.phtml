@@ -20,8 +20,33 @@
             </div>
             <div class="offset-lg-2 col-lg-1 desktop-hero">
                 <div class="d-flex justify-content-center">
-<!--                <i class="ri-heart-3-fill"></i>-->
-                    <i onclick="window.location.href = '?l=<?= $lab['id'] ?>&i=t'; " class="ri-heart-3-line"></i>
+
+                    <?php
+                        $MyToken = "";
+                        if(empty($_COOKIE['token_nav'])){
+                    ?>
+
+                        <i onclick="window.location.href = '?l=<?= $lab['id'] ?>&i=t'; " class="ri-heart-3-line"></i>
+
+                    <?php
+                        } else {
+                            $MyToken = $_COOKIE['token_nav'];
+
+                            if (isAlreadyLiked($lab['id'], $MyToken)){
+                    ?>
+
+                        <i onclick="window.location.href = '?l=<?= $lab['id'] ?>&d=t'; " class="ri-heart-3-fill"></i>
+
+                    <?php
+                            } else {
+                    ?>
+
+                        <i onclick="window.location.href = '?l=<?= $lab['id'] ?>&i=t'; " class="ri-heart-3-line"></i>
+
+                    <?php
+                            }
+                        }
+                    ?>
                 </div>
             </div>
 

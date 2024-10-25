@@ -1,16 +1,17 @@
 <?php 
-    function isAlreadyLiked(int $idLabs, string $token_navigateur) {
-        require "app/env.php";
-        require $DATABASE;
 
-        $check = $db->prepare("SELECT * FROM `like_labs` WHERE `idLabs` = ? AND `token_navigateur` = ?");
-        $check->execute([$idLabs,$token_navigateur]);
+function isAlreadyLiked(int $idLabs, string $token_navigateur) {
+    require "app/env.php";
+    require $DATABASE;
 
-        $result = $check->fetch();
+    $check = $db->prepare("SELECT * FROM `like_labs` WHERE `idLabs` = ? AND `token_navigateur` = ?");
+    $check->execute([$idLabs,$token_navigateur]);
 
-        if ($result) {
-            return true;
-        }
+    $result = $check->fetch();
 
-        return false;
+    if ($result) {
+        return true;
     }
+
+    return false;
+}

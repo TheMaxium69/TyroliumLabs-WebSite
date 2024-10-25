@@ -18,7 +18,15 @@ if (!empty($_GET['i'])) {
 
     }
 
-    $isLiked = addLike($_GET['i'], $MyToken);
+    if (isAlreadyLiked($_GET['i'], $MyToken)) {
+
+        echo '<script>window.location.href = "show.php?l='. $_GET['i'] .'"</script>';
+
+    } else {
+
+        $isLiked = addLike($_GET['i'],$MyToken);
+
+    }
 
     echo "<script>window.location.href = '.'</script>";
 
