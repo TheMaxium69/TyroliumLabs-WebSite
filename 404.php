@@ -3,7 +3,7 @@
 
 <header> <?php $cp_navbar(); ?> </header>
 
-<main id="errormain">
+<main>
 
     <?php $cp_404(); ?>
 
