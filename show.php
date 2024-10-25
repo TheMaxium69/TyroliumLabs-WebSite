@@ -42,11 +42,16 @@ if(!empty($_GET['i'])){
 
     }
 
-    $isLiked = addLike($idSelected, $MyToken);
 
-    if ($isLiked){
+    if (isAlreadyLiked($idSelected, $MyToken)) {
 
         echo '<script>window.location.href = "show.php?l='. $idSelected .'"</script>';
+        //implémenter la logique si c'est déjà like
+        echo 'déjà like';
+
+    } else {
+
+        $isLiked = addLike($idSelected,$MyToken);
 
     }
 
