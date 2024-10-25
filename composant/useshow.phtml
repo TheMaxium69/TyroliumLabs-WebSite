@@ -6,6 +6,11 @@ $projectAll = getProjectByLabs($_GET['l']);
 
 <section id="uses">
     <h4>Projets qui utilisent ce Lab:</h4>
+
+    <?php if (empty($projectAll)) {?>
+        <small>Aucun projet public n'utilise actuellement ce Lab</small>
+
+    <?php } ?>
     
     <?php foreach ($projectAll as $project) { ?>
         <div class="row-item d-flex">
