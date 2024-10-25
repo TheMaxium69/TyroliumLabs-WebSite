@@ -12,4 +12,7 @@ app/salt.prod.php
 
 # file/
 
+docker-compose.yml
+Dockerfile
+
 # Other files and folders
