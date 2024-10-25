@@ -104,11 +104,11 @@ if(!empty($_GET['d'])) {
     <?php $cp_heroshow() ?>
 
     <div class="container mt-4">
-        <div class="row" style="align-content: center;justify-content: center;">
+        <div class="row shows" style="align-content: center;justify-content: center;">
             <div class="col" style="max-width: 525px;">
                 <?php $cp_moreshow() ?>
             </div>
-            <div class="col">
+            <div class="col useshow">
                 <?php $cp_useshow() ?>
             </div>
         </div>
@@ -240,7 +240,12 @@ if(!empty($_GET['d'])) {
             justify-content: end;
             margin-right: 10px; 
         }
+        
+        .shows {
+            flex-direction: column;
+        }
     }
+
 </style>
 
 <?php require "@tyrositeframework/end.php"; ?>
