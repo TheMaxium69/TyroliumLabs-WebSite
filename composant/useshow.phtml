@@ -13,12 +13,16 @@ $projectAll = getProjectByLabs($_GET['l']);
             <p><?= $project['title'] ?></p>
             
             <div class="icon-container">
+                <?php if (!empty($project['websiteUrl'])) { ?>
                 <a href="<?= $project['websiteUrl'] ?>" target="_blank">
                     <i class="ri-global-line"></i>
                 </a>
+                <?php } ?>
+                <?php if (!empty($project['repoUrl'])) { ?>
                 <a href="<?= $project['repoUrl'] ?>" target="_blank">
                     <i class="ri-github-fill"></i>
                 </a>
+                <?php } ?>
             </div>
 
         </div>
